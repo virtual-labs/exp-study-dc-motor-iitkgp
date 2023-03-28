@@ -1,0 +1,167 @@
+/* This HTML page and script files are developed by
+    Piyali Chattopadhyay
+    Project Scientist-Technical,
+    Virtual Labs IIT Kharagpur.*/
+
+
+.img-container {
+    display: inline-block;
+    position: relative;
+}
+
+
+
+
+
+
+#motor_arm_current{
+    position: absolute;
+    width: 12%;
+    height: 11%;
+    top: 14%;
+    left: 17%;
+    text-align: center;
+    background-color: black;
+    color: #A6A6A7;
+    font-weight: bold;
+}
+
+ #motor_arm_voltage{
+	 display:block;
+    position: absolute;
+    width: 12%;
+    height: 11%;
+    top: 11%;
+    left: 79%;
+    text-align: center;
+    background-color: black;
+    color: #A6A6A7;
+    font-weight: bold;
+} 
+
+#motor_tau{
+    position: absolute;
+    width: 12%;
+    height: 12%;
+    top: 41%;
+    left: 70%;
+    text-align: center;
+    background-color: black;
+    color: #A6A6A7;
+    font-weight: bold;
+}
+
+#motor_speed{
+position: absolute;
+width: 39%;
+height: 12%;
+top: 19%;
+left: 29%;
+text-align: center;
+background-color: black;
+color: #A6A6A7;
+font-weight:bold;
+}
+
+#mon{
+position: absolute;
+    width: 4%;
+    height: 9%;
+    top: 43.3%;
+    left: 26.3%;	
+}
+
+#pon{
+position: absolute;
+    width: 4%;
+    height: 9%;
+    top: 85.5%;
+    left: 85.5%;
+}
+
+#rr{
+position: absolute;
+    width: 4%;
+    height: 9%;
+    top: 69.3%;
+    left: 82.8%;	
+}
+
+table, th, td {
+  border: 1px solid black;
+  /*border-collapse: collapse;*/
+}
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}  
+tr:nth-child(odd) {
+  background-color: #F0FBCC;
+} 
+
+
+ #bd1{
+    position: absolute;
+    left: 17.2%;
+    bottom: 50.7%;
+    padding: 4px;
+    z-index: 1;
+  }
+   #bd2{
+    position: absolute;
+    left: 61.4%;
+    bottom: 64%;
+    padding: 4px;
+	
+  }
+  #bd3{
+    position: absolute;
+    left: 74.6%;
+    bottom: 81%;
+    padding: 4px;
+}
+	
+  
+   #bd4{
+    position: absolute;
+    left: 64.6%;
+    bottom: 25.8%;
+    padding: 4px;
+	
+  }
+   #bd5{
+    position: absolute;
+    left: 74%;
+    bottom: 6%;
+    padding: 4px;
+	
+  }
+
+ #bd6{
+    position: absolute;
+    left: 93.8%;
+    bottom: 85.2%;
+    padding: 4px;
+    visibility: hidden;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
