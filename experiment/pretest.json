@@ -2,37 +2,142 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Which D.C. motor will be suitable along with the flywheel, intermittent, light and heavy loads?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Shunt Motor ",
+        "b": "Series Motor",
+        "c": "Differentially Compounded",
+        "d": "Cumulatively Compounded"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Most preferred D.C motor for constant speed application is",
+      "answers": {
+        "a": " Series Motor",
+        "b": "Shunt Motor",
+        "c": "Compound Motor",
+        "d": "Cumulatively Compounded Motor"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In the case of D.C machines, the mechanical losses are primarily the functions of",
+      "answers": {
+        "a": "Voltage",
+        "b": "Current",
+        "c": "Speed",
+        "d": "None of the above"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Motors are rated in",
+      "answers": {
+        "a": "KVA",
+        "b": "HP",
+        "c": "KVAR ",
+        "d": "None of the above"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The symbol in the given figure shows a<br/><img src='./images/pq1.png'>",
+      "answers": {
+        "a": "Servo Motor",
+        "b": "Synchronous Motor",
+        "c": "3-ph Induction Motor",
+        "d": "D.C. motor"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "Determine the full pitch of a 3phase, 36 slots, 36 coils,6 poles motor",
+      "answers": {
+        "a": "9",
+        "b": "6",
+        "c": "12",
+        "d": "18"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },	
+	
+	{
+      "question": "For speed control of D.C. motor, which technique provides speed above base speed?",
+      "answers": {
+        "a": "Field control method",
+        "b": "Supply voltage control method",
+        "c": "Supply current control method",
+        "d": "Armature resistance control method"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
-    {
-      "question": "This is a Sample Question 2?",
+	
+	{
+      "question": "Starters are used with D.C. motors because",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "The motors have high starting torque",
+        "b": "These motors are not self-starting",
+        "c": "Back e.m.f in these motors are zero initially",
+        "d": "To restrict armature current as there is no back e.m.f. while starting"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	
+	{
+      "question": "Which part of the motor confirms that it is a D.C. motor?",
+      "answers": {
+        "a": "Frame",
+        "b": "Commutator",
+        "c": "Shaft",
+        "d": "Stator"
       },
-      "correctAnswer": "c",
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "If a D.C. motor is connected across the A.C. supply, it will",
+      "answers": {
+        "a": "Run at normal speed",
+        "b": "Not Run",
+        "c": "Run at lower speed",
+        "d": "Burn due to heat produced in the field winding by eddy currents"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "The speed of permanent magnet D.C.  motor cannot be controlled by",
+      "answers": {
+        "a": "Flux control method",
+        "b": "Rheostatic control method",
+        "c": "Electronic circuits",
+        "d": "None of these"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "If a resistance is added in series with the field winding of D.C.  shunt motor, then its",
+      "answers": {
+        "a": "Both speed and torque decreases",
+        "b": "Both speed and torque increases",
+        "c": "Speed decreases, torque increases",
+        "d": "Speed increases, torque decreases"
+      },
+      "correctAnswer": "d",
       "difficulty": "beginner"
     }
   ]
