@@ -1,6 +1,6 @@
 ## References
 #### Books
-1. Control system Engineering - I.J. Nagrath and M. Gopal, Wiley Eastern Limited.
+1. Automatic Control Systems - Farid Golnaraghi, Benjamin C. Kuo(2009, Wiley)
 2. Modern Control Engineering - K. Ogata, Prentice Hall of India Pvt. Ltd.
 
 

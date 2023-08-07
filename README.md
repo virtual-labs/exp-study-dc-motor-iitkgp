@@ -13,15 +13,17 @@
 ### About the Experiment 
 **System description**
 
-D.C. motors are the most commonly used actuators in electro-mechanical control systems or servomechanisms. Compared to actuators like 2-phase a.c. motor and stepper motor, the d.c. motor has the advantage of higher torque and simpler driving circuit. However the presence of a commutator and a set of brushes with the problems of sparking make the d.c. motor somewhat less durable. This of course is not true for a present day well designed d.c. servomotor.
+D.C. motors are the most commonly used as actuators in electro-mechanical control systems or servomechanisms. Compared to actuators like 2-phase a.c. motor and stepper
+motor, the d.c. motor has the advantage of higher torque and simpler driving circuit. However the presence of a commutator and a set of brushes with the problems of 
+sparking make the d.c. motor somewhat less durable. This of course is not true for a present day well designed d.c. servomotor.
 					
-The study of the dynamic characteristics of the d.c. motor is important because the overall performance of the control system depends on it.A standard analysis procedure is to model the various subsystems and then combine these to develop the model of the overall system.
-
-This experiment is designed to obtain the torque-speed characteristics, compute the various parameter and finally determine the transfer function of a d.c. motor.			  
+The study of the dynamic characteristics of the d.c. motor is important because the overall performance of the control system depends on it.
+A standard analysis procedure is to model the various subsystems and then combine these to develop the model of the overall system.<br>
+This experiment is designed to obtain the torque-speed characteristics, compute the various parameter and finally determine the transfer function of a d.c. motor.<br>			  
 			  
 <div align="center">
-<img class="img-fluid"  src="./experiment/images/dcpanel.png" alt="">
-<figcaption style="color:blue">Fig1.Panel drawing DC Motor Study</figcaption>
+<img class="img-fluid"  src="./images/dcpanel.png" alt=""><br>
+<figcaption style="color:blue">Fig1.Panel drawing of DC Motor Study</figcaption>
 </div>
 
 <b>Name of Developer | <b> **Prof. Alok Kanti Deb**
