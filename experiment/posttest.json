@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "The speed of the D.C. motor can be increased by",
+      "question": "The speed of the d.c. motor can be increased by",
       "answers": {
         "a": "Increasing the resistance in armature circuit",
         "b": "Increasing the resistance in field circuit",
@@ -13,7 +13,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The armature voltage control of D.C. motor provides",
+      "question": "The armature voltage control of d.c. motor provides",
       "answers": {
         "a": "Constant torque drive",
         "b": "Constant voltage drive",
@@ -24,7 +24,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "A direct on line starter is used: for starting a motor up to",
+      "question": "A direct on line starter is used for starting a motor up to",
       "answers": {
         "a": "5 H.P",
         "b": "10 H.P",
@@ -35,7 +35,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "A 120 V shunt generator running at 850 rpm has its armature and shunt field resistance of 0.15 ohm and 50 ohm respectively. It supplies 200 lamps each rated at 60 W, 100 V. The friction and windage and core loss of the machine is 400 W. its armature copper loss on full load and shunt field loss is",
+      "question": "A 120 V shunt generator running at 850 rpm has its armature and shunt field resistance of 0.15 &ohm; and 50 &ohm; respectively. It supplies 200 lamps each rated as 60 W, 100 V. The friction, windage and core loss of the machine is 400 W. Its armature copper loss on full load and shunt field loss are",
       "answers": {
         "a": "2156.7 W, 200 W",
         "b": "2232.6 W, 200 W",
@@ -46,7 +46,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "If A is the number of parallel paths and P is the number of poles, then the number of parallel path in lap winding and in wave winding is",
+      "question": "If A is the number of parallel paths and P is the number of poles, then the number of parallel paths in lap winding and wave winding are",
       "answers": {
         "a": "A = P, A = 2 ",
         "b": "A = 2P, A = P",
@@ -58,7 +58,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "If the armature current of D.C. series motor has become twice then the torque will become",
+      "question": "If the armature current of d.c. series motor has become twice, then the torque will become",
       "answers": {
         "a": "Twice of the former",
         "b": "Four times of the former",
@@ -69,7 +69,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "If E<sub>b</sub>is the back e.m.f.  of D.C. motor and V is the terminal voltage, then the condition for maximum power is",
+      "question": "If E<sub>b</sub>is the back e.m.f.  of d.c. motor and V is the terminal voltage, then the condition for maximum power is",
       "answers": {
         "a": "E<sub>b</sub> = V",
         "b": "E<sub>b</sub> = 2V",
@@ -79,16 +79,7 @@
       "correctAnswer": "c",
       "difficulty": "beginner"
     },
-    {
-      "question": "Can a D.C. series motor be used for applications in belt drives?",
-      "answers": {
-        "a": "Yes",
-        "b": "No"
-        
-      },
-      "correctAnswer": "b",
-      "difficulty": "beginner"
-    }, 
+    
     {
       "question": "Which motor is not suitable for the application of centrifugal pumps?",
       "answers": {
@@ -101,7 +92,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The torque constant (Km), of a permanent magnet d.c. motor is 0.25 V sec / radian and armature resistance is 2 ohm. If the applied armature voltage is 90 V, then its zero speed torque is",
+      "question": "The torque constant (K<sub>m</sub>), of a permanent magnet d.c. motor is 0.25 V sec / radian and armature resistance is 2 &ohm;. If the applied armature voltage is 90 V, then its zero speed torque is",
       "answers": {
         "a": "10.45 N-m",
         "b": "11.25 N-m",
@@ -125,7 +116,7 @@
     },
 	
 	{
-      "question": "D.C. series motors are used in electric traction. What happens to the speed and current of d.c motor if there is sudden slight drop in the mains voltage?",
+      "question": "D.C. series motors are used in electric traction. What happens to the speed and current of d.c. motor if there is a sudden drop in the mains voltage?",
       "answers": {
         "a": "Speed decreases and current also decreases",
         "b": "Speed decreases and current increases",
@@ -134,6 +125,19 @@
       },
       "correctAnswer": "d",
       "difficulty": "beginner"
+    },
+	
+	{
+      "question": "the control of the d.c. motor is applied at the ______",
+      "answers": {
+        "a": "Armature terminal",
+        "b": "Field terminal",
+        "c": "In both a and b",
+        "d": "None of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
     }
+	
   ]
 }
