@@ -139,7 +139,7 @@ When the motor is loaded, the speed decreases which reduces the back emf. This i
 				
 At steady state (&omega; = constant) the load torque equation must read as 
 				
-$$T_M = B_\omega + T_L$$
+$$T_M = B \omega + T_L$$
 
 TL : load torque
 				
@@ -165,7 +165,7 @@ $$\omega(t)= E K_M (1- e^\frac{-t}{\tau_m})$$
 
 The step response is very similar to that of an RC circuit charging from a step voltage input.The parameters of interest EK<sub>M</sub> and &tau;<sub>m</sub> are indicated in Fig below. One can easily measure the steady state speed, N, and hence compute K<sub>M</sub>
 				
-$$K_M = \frac{N}{E}(rpm/volt) = \frac{\pi N}{30 E_a}$$
+$$K_M = \frac{N}{E} \frac{rpm}{volt} = \frac{\pi N}{30 E_a}  \frac{rad/sec}{volt} $$
 				
 Measurement of &tau;<sub>m</sub>: the time taken by the motor speed to rise from zero and attain63.2% of ω<sub>ss</sub>,
 				
