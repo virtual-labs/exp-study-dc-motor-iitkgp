@@ -158,7 +158,7 @@ increases armature current i<sub>a</sub> so that the motor develops more torque 
 
 At steady state (&omega; = constant) the load torque equation can be written as, 
 
-$$T_M = B_\omega + T_L$$
+$$T_M = B \omega + T_L$$
 
 <b>T<sub>L</sub> : Load torque</b><br/>
 
@@ -189,7 +189,7 @@ The step response is very similar to that of an RC circuit charging from a step 
 The parameters of interest E K<sub>M</sub> and &tau;<sub>m</sub> are indicated in Fig below. 
 The steady state speed N, and hence the value of K<sub>M</sub> can easily be computed or measured.
 
-$$K_M = \frac{N}{E}(rpm/volt) = \frac{\pi N}{30 E_a}$$
+$$K_M = \frac{N}{E} \frac{rpm}{volt} = \frac{\pi N}{30 E_a} \frac{rad/sec}{volt}$$
 
 <b>Measurement of &tau;<sub>m</sub>:</b> The time taken by the motor speed to rise from zero and attain 63.2% of ω<sub>ss</sub>,
 
