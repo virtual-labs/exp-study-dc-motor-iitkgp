@@ -17,7 +17,7 @@ the operation of a dc motor.
 
 <div align="center" >				
 <img alt="" class="img-fluid" src="./images/pmdc.png" class="img-fluid"><br/>
-<b>Fig 1: Permanent Magnet DC Motor</b>
+<b>Fig. 1. Permanent Magnet DC Motor</b>
 </div><br>
 
 <br/><b>Mechanical Section:</b><br/>
@@ -43,11 +43,11 @@ The specifications of the main experimental dc motor are:<br/>
 The field poles of this motor are essentially made of permanent magnet. This motor mainly consists of two parts.
 A stator and an armature. Here the stator is a steel cylinder. The magnets are mounted in the inner periphery of this cylinder.
 The permanent magnets are mounted in such a way that the N-pole and S-pole of each magnet are alternatively faced towards the armature
-as shown in the fig 2.
+as shown in the Fig. 2.
 
 <div align="center">				
 <img alt="" class="img-fluid" src="./images/t1.png" class="img-fluid"><br/>
-<b>Fig 2: Cross section of PMDC Motor</b>
+<b>Fig. 2. Cross section of PMDC Motor</b>
 </div><br>				
 
 <br/><b>Working Principle:</b><br/>
@@ -63,7 +63,7 @@ Each conductor of the armature experiences a force and the compilation of those 
 
 <div align="center">				
 <img alt="" class="img-fluid" src="./images/t2.png" class="img-fluid"><br/>
-<b>Fig 3: Schematic diagram of DC Motor</b>
+<b>Fig. 3. Schematic diagram of DC Motor</b>
 </div><br>
 
 <b>DC Motor model </b><br>
@@ -147,7 +147,7 @@ $$T_M = K_T I_a = \frac{-K_T K_b}{R_a}\omega + \frac{K_T}{R_a}E_a    -----(2)$$
 Here <span class="fontCss2">T<sub>M</sub>, E<sub>a</sub>, E<sub>b</sub></span>, <span class="fontCss2">I<sub>a</sub></span> and <span class="fontCss2">&omega;</span> are the steady state values of the motor torque, applied
 armature voltage, back emf, armature current and angular velocity of the shaft.<br/>
 
-A typical plot of the equation (2) is shown in fig 4. This assumes a linear torque-speed behaviour.<br/><br/>
+A typical plot of the equation (2) is shown in Fig. 4. This assumes a linear torque-speed behaviour.<br/><br/>
 
 As the motor runs at a constant speed,<br/>
 Electrical power input, <span class="fontCss2">P<sub>in</sub> = E<sub>a</sub> &times; I<sub>a</sub></span> Watts <br/>
@@ -190,7 +190,7 @@ $$T_M = K_T I_a = K_b I_a = \frac{E_b}{\omega} I_a = \frac{E_a - I_a R_a}{\omega
 
 <div align="center">				
 <img alt="" class="img-fluid" src="./images/t3.png" class="img-fluid"><br/>
-<b> Fig 4: Torque - Speed Characteristics</b>
+<b> Fig. 4. Torque - Speed Characteristics</b>
 </div><br>
 
 Two motor parameters, <span class="fontCss2">B</span> and <span class="fontCss2">K<sub>b</sub></span>, may therefore be determined from the torque-speed
@@ -204,10 +204,10 @@ $$e_a(t) = E \ U(t), \ i.e. \ E_a(s) = \frac{1}{s}E$$
 
 The motor speed will follow the expression,
 
-$$\omega(t)= E \ K_M (1- e^\frac{-t}{\tau_m}), \ as \ shown \ in  \ fig \ 5$$
+$$\omega(t)= E \ K_M (1- e^\frac{-t}{\tau_m}), \ as \ shown \ in  \ Fig. \ 5$$
 
 The step response is very similar to that of an RC circuit charging from a step voltage input.
-The parameters of interest <span class="fontCss2">E K<sub>M</sub></span> and <span class="fontCss">&tau;<sub>m</sub></span> are indicated in fig 5. 
+The parameters of interest <span class="fontCss2">E K<sub>M</sub></span> and <span class="fontCss">&tau;<sub>m</sub></span> are indicated in Fig. 5. 
 
 The steady state speed <span class="fontCss2">N</span>, and hence the value of <span class="fontCss2">K<sub>M</sub></span> can easily be computed or measured.
 
@@ -220,7 +220,7 @@ $$or, \ K_M = \frac{N}{E} \frac{rpm}{volt} = \frac{\pi N}{30 E_a} \ \frac{rad/s}
 
 <div align="center">				
 <img alt="" class="img-fluid" src="./images/t4.png" class="img-fluid"><br/>
-<b>Fig 5: Step response of the motor</b>
+<b>Fig. 5. Step response of the motor</b>
 </div><br><br/>
 
 <b>Calculations from plots:</b><br/>
@@ -228,7 +228,7 @@ $$or, \ K_M = \frac{N}{E} \frac{rpm}{volt} = \frac{\pi N}{30 E_a} \ \frac{rad/s}
 <b>Calculation of the motor constant <span class="fontCss2">K<sub>M</sub></span> (rpm/volts), generator constant <span class="fontCss2">K<sub>G</sub></span> (volts/rpm) and viscous friction coefficient of motor (<span class="fontCss2">B</span>) :</b><br/>
 
 The motor constant <span class="fontCss2">K<sub>M</sub></span> is calculated from the plot 'Speed (<span class="fontCss2">N</span>) Vs. Motor armature voltage (<span class="fontCss2">E<sub>a</sub></span>)' as
-shown in fig 6. Consider a slope is taken between points (<span class="fontCss2">A<sub>2</sub>,B<sub>2</sub></span>) and (<span class="fontCss2">A<sub>1</sub>,B<sub>1</sub></span>) first. then the <span class="fontCss2">K<sub>M</sub></span> will be
+shown in Fig. 6. Consider a slope is taken between points (<span class="fontCss2">A<sub>2</sub>,B<sub>2</sub></span>) and (<span class="fontCss2">A<sub>1</sub>,B<sub>1</sub></span>) first. then the <span class="fontCss2">K<sub>M</sub></span> will be
 
 $$K_M = \frac{B_{2} - B_{1}}{A_{2} - A_{1}} \ rpm/volts$$
 
@@ -237,12 +237,12 @@ Where, <span class="fontCss2">B<sub>2</sub></span> is speed (rpm) of the motor a
 <br/>
 <div align="center">				
 <img alt="" class="img-fluid" src="./images/Chart1.jpg" class="img-fluid"><br/>
-<b>Fig 6: Motor constant <span class="fontCss2">K<sub>M</sub></span> calculation</b>
+<b>Fig. 6. Motor constant <span class="fontCss2">K<sub>M</sub></span> calculation</b>
 </div><br><br/>
 
 The generator constant <span class="fontCss2">K<sub>G</sub></span> is calculated from the plot 
 'Generator voltage (<span class="fontCss2">E<sub>g</sub></span>) Vs. Speed (<span class="fontCss2">N</span>)' as
-shown in fig 7. Consider a slope is taken between points (<span class="fontCss2">A<sub>2</sub>,B<sub>2</sub></span>) and (<span class="fontCss2">A<sub>1</sub>,B<sub>1</sub></span>) first. Then the <span class="fontCss2">K<sub>G</sub></span> will be
+shown in Fig. 7. Consider a slope is taken between points (<span class="fontCss2">A<sub>2</sub>,B<sub>2</sub></span>) and (<span class="fontCss2">A<sub>1</sub>,B<sub>1</sub></span>) first. Then the <span class="fontCss2">K<sub>G</sub></span> will be
 
 $$K_G = \frac{B_{2} - B_{1}}{A_{2} - A_{1}} \ volts/rpm$$
 
@@ -251,12 +251,12 @@ Where, <span class="fontCss2">B<sub>2</sub></span> is generator voltage (volts) 
 <br/>
 <div align="center">				
 <img alt="" class="img-fluid" src="./images/Chart2.jpg" class="img-fluid"><br/>
-<b>Fig 7: Generator constant <span class="fontCss2">K<sub>G</sub></span> calculation</b>
+<b>Fig. 7. Generator constant <span class="fontCss2">K<sub>G</sub></span> calculation</b>
 </div><br><br/>
 
 The viscous friction coefficient of motor (<span class="fontCss2">B</span>) is calculated from the plot 
 'Torque (<span class="fontCss2">T<sub>M</sub></span>) Vs. Speed (<span class="fontCss2">N</span>)' as
-shown in fig 8. Consider a slope is taken between points (<span class="fontCss2">A<sub>2</sub>,B<sub>2</sub></span>) and (<span class="fontCss2">A<sub>1</sub>,B<sub>1</sub></span>) first. Then the <span class="fontCss2">B</span> will be
+shown in Fig. 8. Consider a slope is taken between points (<span class="fontCss2">A<sub>2</sub>,B<sub>2</sub></span>) and (<span class="fontCss2">A<sub>1</sub>,B<sub>1</sub></span>) first. Then the <span class="fontCss2">B</span> will be
 
 $$B = \frac{B_{2} - B_{1}}{A_{2} - A_{1}} \ newton-meter/rpm$$
 
@@ -266,7 +266,7 @@ Calculate <span class="fontCss2">B</span> in newton-meter/rad/sec. The negative 
 <br/>
 <div align="center">				
 <img alt="" class="img-fluid" src="./images/Chart3.png" class="img-fluid"><br/>
-<b>Fig 8: Viscous friction coefficient of motor (<span class="fontCss2">B</span>) calculation</b>
+<b>Fig. 8. Viscous friction coefficient of motor (<span class="fontCss2">B</span>) calculation</b>
 </div><br><br/>
 
 The motor inertia <span class="fontCss2">J</span> (newton-meter/rad/sec<sup>2</sup>) is calculated using the formula below (<span class="fontCss">&tau;<sub>m</sub></span> is taken in sec):
