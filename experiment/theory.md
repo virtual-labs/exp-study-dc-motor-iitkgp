@@ -275,6 +275,6 @@ $$J = \tau_m (B + \frac{{K_b}^2}{R_a}) \ where, \tau_m \ is \ the \ motor \ time
 
 
 				
-<link href="./simulation/css/DC.css" rel="stylesheet">			    
+		    
 						
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>								
