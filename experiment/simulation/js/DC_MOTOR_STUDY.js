@@ -141,10 +141,6 @@ function rotate1(){
 	document.getElementById('motor_arm_voltage').style.color="red"; 
 	document.getElementById('motor_tau').style.color="red"; 
 	document.getElementById('motor_speed').style.color="red";
-	
-	document.getElementById('knob1').style['pointer-events'] = "auto";
-	document.getElementById('knob2').style['pointer-events'] = "auto";
-	document.getElementById('knob3').style['pointer-events'] = "auto";
  }
 
 else if(document.getElementById('pon').src.match("./images/on.png")){
@@ -160,10 +156,6 @@ else if(document.getElementById('pon').src.match("./images/on.png")){
 	document.getElementById('motor_arm_voltage').value = "0";
 	document.getElementById('motor_tau').value = "0";
 	document.getElementById('motor_speed').value = "0"
-	
-	document.getElementById('knob1').style['pointer-events'] = "none";
-	document.getElementById('knob2').style['pointer-events'] = "none";
-	document.getElementById('knob3').style['pointer-events'] = "none";
 	 
  }
 
@@ -174,13 +166,21 @@ function motoron(){
 	 if((document.getElementById('mon').src.match("./images/off.png")) && (document.getElementById('pon').src.match("./images/on.png")) ){
 	
 	document.getElementById('mon').src = "./images/on.png"; 
-	
+	 
+	document.getElementById('knob1').style['pointer-events'] = "auto";
+	document.getElementById('knob2').style['pointer-events'] = "auto";
+	document.getElementById('knob3').style['pointer-events'] = "auto";
+	 
  }
  
  else if((document.getElementById('mon').src.match("./images/on.png")) && (document.getElementById('pon').src.match("./images/on.png")) ){
 	
 	document.getElementById('mon').src = "./images/off.png"; 
-
+	 
+	document.getElementById('knob1').style['pointer-events'] = "none";
+	document.getElementById('knob2').style['pointer-events'] = "none";
+	document.getElementById('knob3').style['pointer-events'] = "none";
+	 
  }
 
 else if((document.getElementById('pon').src.match("./images/off.png"))&&(document.getElementById('pon').src.match("./images/off.png"))){
@@ -213,7 +213,8 @@ else if(document.getElementById('rr').src.match("./images/on.png")){
 
 var Ra = parseFloat(4.42);///motor internal resistance;there will be motor internal small inductance df 2.21mH approx. due to which total resistance will be approx 0.66ohm
 var Kb = parseFloat(0.0218881667);///back emf constant from observation table avg value in volt/rad/sec;
-var KM = parseFloat(417.6079734219);///Motor constant from observation plot of real time data in rpm/volt;
+var KT = Kb;
+//var KM = parseFloat(417.6079734219);///Motor constant from observation plot of real time data in rpm/volt;
 var KG = parseFloat(0.0021457166);///Generator constant from observation plot of real time data;
 var B = parseFloat(94.83 * Math.pow(10,-6));///viscous friction coefficient of motor from observation plot of real time data;
 var J = parseFloat(4.47087522 * Math.pow(10,-5));///Motor inertia from observation of real time data;
@@ -222,18 +223,28 @@ var Eg;
 function No_Load(){
 	
 var Ea = document.getElementById('Ea').value;
-	
-var speed = (parseFloat(Ea * KM));	
-	
-var w = Math.round(parseFloat(parseFloat(2*Math.PI*speed)/60));
 
-var kg2= parseFloat((KG*60)/parseFloat(2*Math.PI));
+var KM = math.divide(KT,math.add(math.multiply(Ra,B),math.multiply(KT,Kb))); ///motor gain constant	
+var Taum = math.divide(math.multiply(Ra,J),math.add(math.multiply(Ra,B),math.multiply(KT,Kb))); ///motor time constant
+
+for (var t=0; t<=10; t+=0.1){
 	
- Eg = parseFloat(kg2 * w);
+var w = math.multiply(Ea,KM,math.subtract(1,math.pow(math.e,-math.divide(t,Taum))));///speed in rad/sec
+	
+	
+}
+console.log(w);
+var speed = math.divide(math.multiply(w,60),math.multiply(2,math.pi));
+
+var kg2= parseFloat(math.multiply(KG,60),math.multiply(2,math.PI));
+	
+ Eg = parseFloat(KG * w);
+ console.log("Eg ="+Eg);
 
 var Eb = parseFloat(Kb * w);
+console.log("Eb ="+Eb);
 	
-var Ia = parseFloat((parseFloat(Ea-Eb)/Ra)*1000);
+var Ia = math.multiply(math.divide(math.subtract(Ea,Eb),Ra),1000);
 	
 document.getElementById('Eg').value = Eg;
 document.getElementById('motor_arm_current').value = Ia;
@@ -242,7 +253,7 @@ document.getElementById('motor_speed').value = speed ;
 }
 ///////////////Math model with loading gnerator////////////////////////////////////////////////////
 var n,c;
-/* var nl1=parseFloat(417.60),
+var nl1=parseFloat(417.60),
 nl2=parseFloat(726),
 nl3=parseFloat(1140),
 nl4=parseFloat(1550),
@@ -254,10 +265,8 @@ nl9=parseFloat(3611),
 nl10=parseFloat(3993),
 nl11=parseFloat(4379),
 nl12=parseFloat(4740);
- */
- 
+
 function loadtest(){
-	No_Load();
 	
 var Ea = document.getElementById('Ea').value;
 var RL = document.getElementById('RL').value;
@@ -266,70 +275,76 @@ n = document.getElementById('motor_speed').value;
 	
 if(document.getElementById('vchk').value==1 && document.getElementById('RL').value == 0){
 	
-// n = nl1;	
-c = parseFloat(18.00);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl1;	
+c = parseFloat(15.00);	
 }	
 else if(document.getElementById('vchk').value==2 && document.getElementById('RL').value == 0){
 	
- //n = nl2;	
-c = parseFloat(38.00);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl2;	
+c = parseFloat(26.6);	
 }	
 else if(document.getElementById('vchk').value==3 && document.getElementById('RL').value == 0){
 	
-// n = nl3;	
-c = parseFloat(50.8);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl3;	
+c = parseFloat(37.5);	
 }	
 else if(document.getElementById('vchk').value==4 && document.getElementById('RL').value == 0){
 	
- //n = nl4;	
-c = parseFloat(67.00); ///from slope drawn from generator loading characteristics (observasion table).
+ n = nl4;	
+c = parseFloat(53.00);
 }	
 else if(document.getElementById('vchk').value==5 && document.getElementById('RL').value == 0){
 	
- //n = nl5;	
-c = parseFloat(71.5);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl5;	
+c = parseFloat(71.5);	
 }	
 else if(document.getElementById('vchk').value==6 && document.getElementById('RL').value == 0){
 	
-// n = nl6;	
-c = parseFloat(90.25);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl6;	
+c = parseFloat(85.67);	
 }
 else if(document.getElementById('vchk').value==7 && document.getElementById('RL').value == 0){
 	
-// n = nl7;	
-c = parseFloat(104.00);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl7;	
+c = parseFloat(102.33);	
 }
 else if(document.getElementById('vchk').value==8 && document.getElementById('RL').value == 0){
 	
-// n = nl8;	
-c = parseFloat(122.00);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl8;	
+c = parseFloat(122.00);	
 }
 else if(document.getElementById('vchk').value==9 && document.getElementById('RL').value == 0){
 	
-// n = nl9;	
-c = parseFloat(134.50);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl9;	
+c = parseFloat(139.00);	
 }
 else if(document.getElementById('vchk').value==10 && document.getElementById('RL').value == 0){
 	
- //n = nl10;	
-c = parseFloat(144.00);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl10;	
+c = parseFloat(144.00);	
 }
 else if(document.getElementById('vchk').value==11 && document.getElementById('RL').value == 0){
 	
-// n = nl11;	
-c = parseFloat(167.50);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl11;	
+c = parseFloat(164.00);	
 }
 else if(document.getElementById('vchk').value==12 && document.getElementById('RL').value == 0){
 	
- //n = nl12;	
-c = parseFloat(189.50);	///from slope drawn from generator loading characteristics (observasion table).
+ n = nl12;	
+c = parseFloat(189.50);	
 }
 
 
-else if(document.getElementById('RL').value != 0){
+else if(document.getElementById('RL').value != 0 && document.getElementById('counterchk').value == 1){
 	
-	n =parseFloat(n-(c*RL));
+	n =parseFloat(n-c);
 	}
+	
+	else if(document.getElementById('RL').value != 0 && document.getElementById('counterchk').value == 2){
+	
+	n =math.add(n,c);
+	}
+	
 	
 var w = Math.round(parseFloat(parseFloat(2*Math.PI*n)/60));
 
@@ -376,35 +391,22 @@ else if(document.getElementById('RL').value!=0){
 
 function simulate(){
 	
-if( document.getElementById('testchk').value == 1 && document.getElementById('mon').src.match('./images/on.png') && document.getElementById('rr').src.match('./images/off.png')){
+if( document.getElementById('testchk').value == 1){
 	
 No_Load();
 	
 }	
-else if( document.getElementById('testchk').value == 2 && document.getElementById('mon').src.match('./images/on.png') && document.getElementById('rr').src.match('./images/off.png')){
+else if( document.getElementById('testchk').value == 2){
 	
 loadtest();
 	
 }	
 	
-else if( document.getElementById('testchk').value == 3 && document.getElementById('mon').src.match('./images/on.png')){
+else if( document.getElementById('testchk').value == 3){
 	
 step_response();
 	
-}
-
-else if((document.getElementById('testchk').value == 1 || document.getElementById('testchk').value == 2 || document.getElementById('testchk').value == 3) && document.getElementById('mon').src.match('./images/off.png')){
-	
-alert('Please set the MOTOR switch to ON, then click on Simulate button');	
 }	
-
-else if((document.getElementById('testchk').value == 1 || document.getElementById('testchk').value == 2) && document.getElementById('rr').src.match('./images/on.png')){
-	
-alert('Please set the RESET switch to RESET');	
-}
-
-
-
 	
 }
 
@@ -501,9 +503,9 @@ function createTable3() {
 	arr3[5] = document.getElementById("motor_tau").value;
 	arr3[6] = parseFloat((arr3[3]*Math.PI)/(arr3[1]*30));
 	
-	document.getElementById('tfn').value = Math.floor(arr3[6]*1000)/1000;
-	document.getElementById('tfd').value = Math.floor(parseFloat(arr3[5]/1000)*1000)/1000;
-	//document.getElementById('motor_inertia').value = inertia;
+	document.getElementById('tfn').value = arr3[6];
+	document.getElementById('tfd').value = parseFloat(arr3[5]/1000);
+	document.getElementById('motor_inertia').value = inertia;
 	
 	
 	table3 = document.getElementById("myTablestep");
@@ -542,17 +544,17 @@ document.getElementById('chartContainer').style.display  = "none";
       animationEnabled: true,
 		  animationDuration: 10000, 
 	  title:{
-      text: "DC motor step response "
+      text: "DC motor Step Response "
 	  
       },
 	  
 	  axisX:{
         interlacedColor: "#B2F9FA",
-        title: "Time (sec.)"
+        title: "Time(Sec)"
       },
     axisY: [
 	      {/////output Y axis
-            title: "Motor speed(ω (t))",
+            title: "motor Speed(&omega;(t))",
 			
 			//maximum:0.03,
         }		
@@ -610,7 +612,7 @@ document.getElementById('chartContainer').style.display  = "none";
       //animationEnabled: true,
 		  //animationDuration: 10000, 
 	  title:{
-      text: "Speed Vs. Motor armature voltage Plot (Motor Characteristics) "
+      text: "Speed Vs. Ea Plot(Motor Characteristics) "
 	  
       },
 	  
@@ -618,7 +620,7 @@ document.getElementById('chartContainer').style.display  = "none";
 	  
 	  {
         interlacedColor: "#B2F9FA",
-        title: "Motor armature voltage (volts)"
+        title: "Ea(Volts)"
       },
 	  
 	  
@@ -627,7 +629,7 @@ document.getElementById('chartContainer').style.display  = "none";
 	  
     axisY: 
 	      {// Y axis
-            title: "Speed (rpm)",
+            title: "Speed(rpm)",
 			
 			//maximum:28,
         },
@@ -676,7 +678,7 @@ document.getElementById('chartContainer').style.display  = "none";
       //animationEnabled: true,
 		  //animationDuration: 10000, 
 	  title:{
-      text: "Generator voltage Vs. Speed Plot (Generator Characteristics) "
+      text: "Eg Vs. Speed Plot(Generator Characteristics) "
 	  
       },
 	  
@@ -684,7 +686,7 @@ document.getElementById('chartContainer').style.display  = "none";
 	  
 	  {
         interlacedColor: "#B2F9FA",
-        title: "Speed (rpm)"
+        title: "Speed(rpm)"
       },
 	  
 	  
@@ -693,7 +695,7 @@ document.getElementById('chartContainer').style.display  = "none";
 	  
     axisY: 
 	      {// Y axis
-            title: "Generator voltage (volts)",
+            title: "Eg(Volts)",
 			
 			//maximum:28,
         },
@@ -744,7 +746,7 @@ document.getElementById('chartContainer').style.display  = "none";
       //animationEnabled: true,
 		  //animationDuration: 10000, 
 	  title:{
-      text: "Torque Vs. Speed Plot"
+      text: "Torque Vs. Speed "
 	  
       },
 	  
@@ -752,7 +754,7 @@ document.getElementById('chartContainer').style.display  = "none";
 	  
 	  {
         interlacedColor: "#B2F9FA",
-        title: "Speed (rpm)"
+        title: "Speed(rpm)"
       },
 	  
 	  
@@ -761,7 +763,7 @@ document.getElementById('chartContainer').style.display  = "none";
 	  
     axisY: 
 	      {// Y axis
-            title: "Torque (newton-meter)",
+            title: "TM(N-m)",
 			
 			//maximum:28,
         },
@@ -793,12 +795,7 @@ document.getElementById('chartContainer').style.display  = "none";
 	//document.getElementById('myTablestep').style.display = "none";
 	document.getElementById('vchkspan').style.display = "none";
 	 document.getElementById('testchk').value = "1";
-	  document.getElementById('mconstant').readOnly = false;
-	  document.getElementById('gconstant').readOnly = false;
-	  document.getElementById('bconstant').readOnly = true;
-	  document.getElementById('kbconstant').readOnly = true;
-	  document.getElementById('motor_inertia').readOnly = true;
-	  document.getElementById('tfbtn').disabled = true;
+	 
  }
  
  function Tableshow2(){
@@ -808,12 +805,7 @@ document.getElementById('chartContainer').style.display  = "none";
 	//document.getElementById('myTable').style.display = "none";
 	//document.getElementById('myTablestep').style.display = "none";
 	 document.getElementById('testchk').value = "2";
-	  document.getElementById('mconstant').readOnly = true;
-	  document.getElementById('gconstant').readOnly = true;
-	  document.getElementById('bconstant').readOnly = false;
-	  document.getElementById('kbconstant').readOnly = false;
-	  document.getElementById('motor_inertia').readOnly = true;
-	  document.getElementById('tfbtn').disabled = true;
+	 
  }
  
  function Tableshow3(){
@@ -823,12 +815,6 @@ document.getElementById('chartContainer').style.display  = "none";
 	//document.getElementById('myTable').style.display = "none";
 	//document.getElementById('myTableload').style.display = "none";
 	 document.getElementById('testchk').value = "3";
-	  document.getElementById('mconstant').readOnly = true;
-	  document.getElementById('gconstant').readOnly = true;
-	  document.getElementById('bconstant').readOnly = true;
-	  document.getElementById('kbconstant').readOnly = true;
-	  document.getElementById('motor_inertia').readOnly = false;
-	  document.getElementById('tfbtn').disabled = false;
 	 
  }
  

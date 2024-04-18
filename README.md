@@ -13,20 +13,21 @@
 ### About the Experiment 
 **System description**
 
-D.C. motors are the most commonly used as actuators in electro-mechanical control systems or servomechanisms. Compared to actuators like 2-phase a.c. motor and stepper
-motor, the d.c. motor has the advantage of higher torque and simpler driving circuit. However the presence of a commutator and a set of brushes with the problems of 
-sparking make the d.c. motor somewhat less durable. This of course is not true for a present day well designed d.c. servomotor.
-					
-The study of the dynamic characteristics of the d.c. motor is important because the overall performance of the control system depends on it.
-A standard analysis procedure is to model the various subsystems and then combine these to develop the model of the overall system.<br>
-This experiment is designed to obtain the torque-speed characteristics, compute the various parameter and finally determine the transfer function of a d.c. motor.<br>			  
+DC motors are most commonly used as actuators in electro-mechanical control systems or servo mechanisms. Compared to actuators like 2-phase ac motor and stepper motor, the dc motor has the advantage of higher torque and simpler driving circuit. However the presence of a commutator and a set of brushes with the problems of 
+sparking make the dc motor less durable. 
+
+The study of the dynamic characteristics of the dc motor is important because the overall performance of the control system depends on it.
+
+This experiment is designed to obtain the torque-speed characteristics, compute the various parameters and finally determine the transfer function of a dc motor.			  
 			  
 <div align="center">
-<img class="img-fluid"  src="./images/dcpanel.png" alt=""><br>
-<figcaption style="color:blue">Fig1.Panel drawing of DC Motor Study</figcaption>
+<img class="img-fluid"  src="experiment/images/dcpanel.png" alt="">
+
+<b>Fig. 1. Panel drawing of DC Motor</b>
 </div>
 
-<b>Name of Developer | <b> **Prof. Alok Kanti Deb**
+
+<b>Subject matter expertise | <b> **Prof. Alok Kanti Deb**
 :--|:--|
 <b> Institute | <b>  **Indian Institute of Technology Kharagpur**
 <b> Email id|     <b>  **alokkanti@ee.iitkgp.ac.in**
@@ -37,4 +38,5 @@ This experiment is designed to obtain the torque-speed characteristics, compute 
 
 SrNo | Name | VLabs Developer or Integration Engineer | Designation | Department| Institute
 :--|:--|:--|:--|:--|:--|
-1 | **Piyali Chattopadhyay** | Developer & Integration | Project Scientist | Department of Electrical Engineering | IIT Kharagpur | 
+1 | **Piyali Chattopadhyay** | Developer | Project Scientist | Department of Electrical Engineering | IIT Kharagpur | 
+2 | **Subhasis Mahata** | Integration Engineer | Senior Project Scientist | Department of Mechanical Engineering | IIT Kharagpur |

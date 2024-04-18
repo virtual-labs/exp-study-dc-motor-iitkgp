@@ -1,105 +1,114 @@
 # Theory
 
- The first step in the analysis of control system is to derive its mathematical model to understand the working of the complete system.
-			   
-**The Plant(Coupled-DC Motor-Generator set):**
+The first step in the analysis of control system is to derive its mathematical model to understand the working of the complete system.
+<br><br>
 
-In a d.c. motor, an armature rotates inside a magnetic field. The basic working principle of a d.c. motor is based on the fact that when ever a current carrying conductor is placed inside a magnetic field, there will be a mechanical force experienced by that conductor.
-All kinds of d.c. motors work under this principle. Hence for constructing a d.c. motor, it is essential to establish a magnetic field.
+<b>The Plant (Coupled-DC Motor-Generator Set):</b><br/>
+
+In a dc motor, an armature rotates inside a magnetic field. The basic working principle of a dc motor is based on the fact that when ever
+a current carrying conductor is placed inside a magnetic field, there will be a mechanical force experienced by that conductor.
+All kinds of dc motors work under this principle. Hence for constructing a dc motor, it is essential to establish a magnetic field.
 The magnetic field is established by using a magnet. Different types of magnets can be used – it may be an electromagnet or 
 it can be a permanent magnet.
-				
-A Permanent Magnet d.c. motor (PMDC motor) is a type of d.c. motor that uses a permanent magnet to create the magnetic field required for the operation of a d.c. motor.	
-				
-				
+<br>
+A permanent magnet dc motor is a type of dc motor that uses a permanent magnet to create the magnetic field required for
+the operation of a dc motor.	
+<br>
+
 <div align="center" >				
-<img alt="" class="img-fluid" src="./gifs/dc motor gif.gif" style="width:36%;height:10%;">
-</div>
-				
-<b>Mechanical Section:</b>
+<img alt="" class="img-fluid" src="./images/pmdc.png" class="img-fluid"><br/>
+<b>Fig 1: Permanent Magnet DC Motor</b>
+</div><br>
 
-It comprises of the experimental permanent magnet d.c. motor (&asymp; 8W) coupled to a small d.c. generator (&asymp; 2W), which serves the twin
-purposes of,
-				
-1. Electrical loading of the motor
+<br/><b>Mechanical Section:</b><br/>
+It comprises of the experimental permanent magnet dc motor
+(&asymp; 8 W) coupled to a small dc generator (&asymp; 2 W), which serves the twin
+purposes of,<br/>
 
-2. Transient response signal pick-up.
-				
-Further, a slotted disk mounted on the common shaft produces 6 pulses per revolution through an opto- interrupter, which is used in a 4-digit speed display in r.p.m.
+1. Electrical loading of the motor<br/>
+2. Transient response signal pick-up.<br/>
 
-The specifications of the main experimental d.c. motor are:
-				
-• Operating Voltage :12 V dc
+Further, a slotted disk mounted on the common shaft produces 6 pulses per revolution
+through an opto - interrupter, which is used in a 4-digit speed display in r.p.m.<br/>
 
-• No Load Current: 0.09 A
+The specifications of the main experimental dc motor are:<br/>
 
-• Full Load Current: 1.0 A
+• Operating voltage :12 V dc<br/>
+• No load current: 0.09 A<br/>
+• Full load current: 1.0 A<br/>
+• Torque: 30 mN-m / 300 g-cm<br/>
 
-• Torque: 30 mN-m/ 300 g-cm
+<br/><b>Permanent Magnet DC Motor (PMDC Motor):</b><br/>
 
-<b>Permanent Magnet DC motor (PMDC motor):</b>
-			   
-The field poles of this motor are essentially made of permanent magnet. A PMDC motor mainly consists of two parts. A stator and an armature. Here the stator is a steel cylinder. The magnets are mounted in the inner periphery of this cylinder. The permanent magnets are mounted in such a way that the N-pole and S-pole of each magnet are alternatively faced towards armature as shown in the figure below.
-				
+The field poles of this motor are essentially made of permanent magnet. This motor mainly consists of two parts.
+A stator and an armature. Here the stator is a steel cylinder. The magnets are mounted in the inner periphery of this cylinder.
+The permanent magnets are mounted in such a way that the N-pole and S-pole of each magnet are alternatively faced towards the armature
+as shown in the fig 2.
+
 <div align="center">				
-<img alt="" class="img-fluid" src="./images/t1.png" style="width:30%;height:10%;">
-</div>				
-				
-<b>Working Principle:</b>
-				
-The working principle of PMDC motor is just similar to the general working principle of d.c. motor. That is when a current carrying conductor comes inside a magnetic field, a mechanical force will be experienced by the conductor and the direction of this force is governed by Fleming’s left hand rule. As in a permanent magnet DC motor, the armature is placed inside the magnetic field of a permanent magnet, the armature rotates in the direction of the generated force. Here each conductor of the armature experiences the mechanical force F = B.I.L Newton where, B is the magnetic field strength in Tesla (weber / m<sup>2</sup>), I is the current in Ampere flowing through that conductor and L is the length of the conductor in meter comes under the magnetic field. Each conductor of the armature experiences a force and the compilation of those forces produces a torque, which tends to rotate the armature.
-				
+<img alt="" class="img-fluid" src="./images/t1.png" class="img-fluid"><br/>
+<b>Fig 2: Cross section of PMDC Motor</b>
+</div><br>				
+
+<br/><b>Working Principle:</b><br/>
+
+The working principle of permanent magnet dc motor is just similar to the general working principle of a dc motor.
+When a current carrying conductor comes inside a magnetic field, a mechanical force will be experienced by the conductor and
+the direction of this force is governed by Fleming’s left hand rule.
+As in a permanent magnet dc motor, the armature is placed inside the magnetic field of a permanent magnet,
+the armature rotates in the direction of the generated force. Here each conductor of the armature experiences
+the mechanical force F = B.I.L Newton where, B is the magnetic field strength in Tesla (weber / m<sup>2</sup>),
+I is the current (ampere) flowing through that conductor and L is the length of the conductor (meter) comes under the magnetic field.
+Each conductor of the armature experiences a force and the compilation of those forces produces a torque, which tends to rotate the armature.
+
 <div align="center">				
-<img alt="" class="img-fluid" src="./images/t2.png" style="width:45%;height:10%;">
-</div>
-				
-<b>D.C. Motor Model </b>
-				
-The schematic diagram of a d.c. motor is shown in above figure where the following notations are used
+<img alt="" class="img-fluid" src="./images/t2.png" class="img-fluid"><br/>
+<b>Fig 3: Schematic diagram of DC Motor</b>
+</div><br>
 
-e<sub>a</sub> : Armature voltage (volts)
+<b>DC Motor model </b><br>
 
-i<sub>a</sub> : Armature current (amp.)
+The schematic diagram of a dc motor is shown in fig 3 where the following notations are used<br>
+<span class="fontCss">e<sub>a</sub></span> : Armature voltage (volts)<br>
+<span class="fontCss">i<sub>a</sub></span> : Armature current (amp.)<br>
+<span class="fontCss2">R<sub>a</sub></span> : Armature resistance (ohms)<br>
+<span class="fontCss2">L<sub>a</sub></span> : Armature inductance (henrys)<br>
+<span class="fontCss">e<sub>b</sub></span> : Back emf (volts)<br>
+<span class="fontCss">i<sub>f</sub></span> : Field current (amp.)<br>
+<span class="fontCss2">T<sub>M</sub></span> : Motor torque (newton-m)<br>
+<span class="fontCss2">T<sub>L</sub></span> : Load torque (newton-m)<br>
+<span class="fontCss2">&omega;</span> : Angular velocity (rad/sec)<br>
+<span class="fontCss2">J</span> : Moment of inertia of the rotor including external loading if any (newton-m/rad/sec<sup>2</sup>)<br>
+<span class="fontCss2">B</span> : Viscous friction coefficient including external loading if any (newton-m/rad/sec)<br>
+<span class="fontCss2">K<sub>T</sub></span> : Torque constant<br>
+<span class="fontCss2">K<sub>b</sub></span> : Back emf constant<br>
 
-R<sub>a</sub> : Armature resistance (ohms)
 
-L<sub>a</sub> : Armature inductance (henry)
+<br/> Upper case notations <span class="fontCss2">E<sub>a</sub></span>, 
+<span class="fontCss2">I<sub>a</sub></span>, <span class="fontCss2">E<sub>b</sub></span>, 
+<span class="fontCss2">I<sub>f</sub></span> 
 
-e<sub>b</sub> : Back emf (volts)
+are used for steady state values of the respective
+variables <span class="fontCss">e<sub>a</sub></span>, <span class="fontCss">i<sub>a</sub></span> ,
+<span class="fontCss">e<sub>b</sub></span> and <span class="fontCss">i<sub>f</sub></span> 				
+<br/>
 
-i<sub>f</sub> : Field current (amp.)
+In the present setup a permanent magnet dc motor is used, the field winding is thus absent and the air gap flux is constant. 
+The input drive may therefore be applied to the armature only, i.e. only armature controlled operation is possible.
+The mathematical equations in this operating mode are, 
 
-T<sub>M</sub> : Motor torque (newton-m)
+$$T_M = K_T \ i_a$$
 
-T<sub>L</sub> : Load torque (newton-m)
+$$e_b = K_b \ \omega$$
 
-&omega; : Angular velocity (rad/sec)
-
-J : Moment of inertia of the rotor including external loading if any (newton-m/rad/sec<sup>2</sup>)
-
-B : Viscous friction coefficient including external loading if any (newton-m/rad/sec)
-
-K<sub>T</sub> : Torque constant
-
-K<sub>b</sub> : Back emf constant
-				
-				
-Upper case notations E<sub>a</sub>, I<sub>a</sub>, E<sub>b</sub>, I<sub>f</sub> are used for steady state values of the respective variables e<sub>a</sub>, i<sub>a</sub>, e<sub>b</sub> and i<sub>f</sub>				
-				
-In the present setup a permanent magnet d.c. motor is used, the field winding is thus absent and the air gap flux is constant. The input drive may therefore be applied to the armature only, i.e. only armature controlled operation is possible. The mathematical equations in this operating mode are, 
-				
-$$T_M = K_T I_a$$
-				
-$$e_b = K_b \omega$$
-				
 Armature circuit model
-				
+
 $$L_a\frac{di_a}{dt} + R_a i_a + e_b = e_a$$
-				
+
 Mechanical model
-				
+
 $$J\frac{d\omega}{dt} + B\omega + T_L = T_M $$
-				
+
 Taking Laplace Transform and rearranging the terms,
 
 $$\frac{\omega(s)}{E_a(s)} = \frac{K_T}{(sL_a + R_a)(sJ + B) + K_T K_b}$$
@@ -108,93 +117,164 @@ Assuming the inductance of the armature circuit to be very small, the motor tran
 
 $$G_M(s) = \frac{\omega(s)}{E_a(s)} = \frac{K_T/R_a}{Js + B + \frac{K_T K_b}{R_a}} = \frac{K_M}{s\tau_m + 1}   ----(1)$$
 
-Motor Gain Constant(K<sub>M</sub>)
+Motor Gain Constant (<span class="fontCss2">K<sub>M</sub></span>)
 
 $$K_M = \frac{K_T}{R_a B + K_T K_b}$$
 
-Motor Time Constant
+Motor Time Constant (<span class="fontCss">&tau;<sub>m</sub></span>)
 
 $$\tau_m = \frac{R_a J}{R_a B + K_T K_b}$$
 
 
-The armature controlled motor therefore has a first order type-0 transfer function and the two constant K<sub>M</sub> and &tau;<sub>m</sub>
+The armature controlled motor therefore has a first order type-0 transfer function and the two constant <span class="fontCss2">K<sub>M</sub></span> and 
+<span class="fontCss">&tau;<sub>m</sub></span>
+
 depend upon motor parameters.<br/><br/>
 
 <b> Torque – Speed Curves</b><br/>
 
 As a mechanical actuator the magnitude of the steady state torque produced by the motor with a given armature voltage 
-is of interest to an user. With a simple rearrangement of terms the motor torque may be written as,
+needs to be known. With a simple rearrangement of terms, the motor torque may be written as,<br>
 
-steady state armature current
+steady state armature current,<br>
 
 $$I_a = \frac{E_a-E_b}{R_a} = \frac{E_a}{R_a} - \frac{K_b \omega}{R_a}$$
 
-steady state torque generated
+steady state torque generated,<br>
 
 $$T_M = K_T I_a = \frac{-K_T K_b}{R_a}\omega + \frac{K_T}{R_a}E_a    -----(2)$$
 
-Here T<sub>M</sub>, E<sub>a</sub>, E<sub>b</sub>, I<sub>a</sub> and &omega; are the steady state values of the motor torque, applied
-armature voltage, back emf, armature current and angular velocity of the shaft.
-A typical plot of the above equation is shown in Fig below. This assumes a linear torque-speed behaviour
-                
+Here <span class="fontCss2">T<sub>M</sub>, E<sub>a</sub>, E<sub>b</sub></span>, <span class="fontCss2">I<sub>a</sub></span> and <span class="fontCss2">&omega;</span> are the steady state values of the motor torque, applied
+armature voltage, back emf, armature current and angular velocity of the shaft.<br/>
+
+A typical plot of the equation (2) is shown in fig 4. This assumes a linear torque-speed behaviour.<br/><br/>
+
 As the motor runs at a constant speed,<br/>
-Electrical power input, P<sub>in</sub> = E<sub>a</sub> &times; I<sub>a</sub> watts <br/>
-Power lost in R<sub>a</sub> = R<sub>a</sub> x I<sub>a</sub> x I<sub>a</sub><br/>
-Power available in the armature, P<sub>arm</sub> = (E<sub>a</sub> – I<sub>a</sub> R<sub>a</sub>) I<sub>a</sub> = E<sub>b</sub> &times; I<sub>a</sub>
-= K<sub>b</sub> &times; &omega; &times; I<sub>a</sub><br/>
+Electrical power input, <span class="fontCss2">P<sub>in</sub> = E<sub>a</sub> &times; I<sub>a</sub></span> Watts <br/>
+Power lost in <span class="fontCss2">R<sub>a</sub> = R<sub>a</sub> &times; I<sub>a</sub> &times; I<sub>a</sub></span><br/>
+Power available in the armature, <span class="fontCss2">P<sub>arm</sub></span> = (<span class="fontCss2">E<sub>a</sub> – I<sub>a</sub> R<sub>a</sub></span>)
+<span class="fontCss2">I<sub>a</sub> = E<sub>b</sub> &times; I<sub>a</sub>
+= K<sub>b</sub> &times; &omega; &times; I<sub>a</sub></span><br/>
 
 Mechanical power developed,
 
-$$P_{mech} = T_M \omega = K_T I_a \omega$$
+$$P_{mech} = T_M \times \omega \ \ newton-m \ rad/sec \ = K_T \times I_a \times \omega$$
 
-Assuming 100% conversion of power from electrical input to mechanical output, the above two expressions can be equated to get
+Assuming 100% conversion of power from electrical input to mechanical output, the above two expressions of <i style="font-family:'Sitka Text'">P<sub>mech</sub></i> and <i style="font-family:'Sitka Text'">P<sub>arm</sub></i>
+can be equated to get
 
-$$K_b(\frac{volts}{rad/s}) = K_T(\frac{N-m}{amp})$$
+$$K_b \ ( \frac{volts}{rad/s} ) = K_T \ ( \frac{newton-m}{amp.} )$$
 
-$$T_M = \frac{-K_b^2}{R_a}\omega + \frac{K_b}{R_a}E_a$$
+Thus, the numerical values of <span class="fontCss2">K<sub>T</sub></span> and <span class="fontCss2">K<sub>b</sub></span> may be assumed to be identical. The torque may then be expressed as,
+
+$$T_M = \frac{-K_b^2}{R_a}\omega + \frac{K_b}{R_a}E_a ....(3)$$
 
 When the motor is loaded, the speed decreases which reduces the back emf. This
-increases armature current i<sub>a</sub> so that the motor develops more torque in order to supply the load.
+increases armature current <span class="fontCss">i<sub>a</sub></span> so that the motor develops more torque in order to supply the load.
 
-At steady state (&omega; = constant) the load torque equation can be written as, 
+At steady state (<span class="fontCss2">&omega;</span> = constant) the load torque equation can be written as, 
 
-$$T_M = B \omega + T_L$$
+$$T_M = B \omega + T_L ...(4)$$ 
 
-<b>T<sub>L</sub> : Load torque</b><br/>
+$$Where, \ T_L \ = \ Load \ Torque$$
 
-In the experimental work T<sub>L</sub> is increased in steps by loading the motor with the help of	the coupled generator and the values
-of T<sub>M</sub> and &omega; are recorded. While &omega; is computed from the speed N in rpm, as displayed on the motor unit,
-the following expression is used to compute	the motor torque T<sub>M</sub> at a constant value of E<sub>a</sub>.
 
-$$T_M = K_T I_a = K_b I_a = \frac{E_b}{\omega} I_a = \frac{E_a - I_a R_a}{\omega}$$
+
+In the experimental work <span class="fontCss2">T<sub>L</sub></span> is increased in steps by loading the motor with the help of the coupled generator and the values
+of <span class="fontCss2">T<sub>M</sub></span> and <span class="fontCss2">&omega;</span> are recorded. While <span class="fontCss2">&omega;</span> is computed from the speed <span class="fontCss2">N </span>
+in rpm, as displayed on the motor unit,
+
+the following expression is used to compute	the motor torque <span class="fontCss2">T<sub>M</sub></span> at a constant value of <span class="fontCss2">E<sub>a</sub></span>.
+
+$$T_M = K_T I_a = K_b I_a = \frac{E_b}{\omega} I_a = \frac{E_a - I_a R_a}{\omega} I_a .....(5)$$
 
 <div align="center">				
-<img alt="" class="img-fluid" src="./images/t3.png" style="width:45%;height:10%;">
-</div>
+<img alt="" class="img-fluid" src="./images/t3.png" class="img-fluid"><br/>
+<b> Fig 4: Torque - Speed Characteristics</b>
+</div><br>
 
-Two motor parameters, B and K<sub>b</sub>, may therefore be determined from the Torque-Speed
-Characteristics obtained under steady state conditions or constant speed operation of the motor 
+Two motor parameters, <span class="fontCss2">B</span> and <span class="fontCss2">K<sub>b</sub></span>, may therefore be determined from the torque-speed
+characteristics obtained under steady state conditions or constant speed operation of the motor. <br><br>
 
-<b>Transient Response </b>
+<b>Transient Response </b><br>
 
 In response to a step input,
 
-$$e_a(t) = E U(t), E_a(s) = \frac{1}{s}E$$
+$$e_a(t) = E \ U(t), \ i.e. \ E_a(s) = \frac{1}{s}E$$
 
-    the motor speed will follow the expression,
+The motor speed will follow the expression,
 
-$$\omega(t)= E K_M (1- e^\frac{-t}{\tau_m})$$
+$$\omega(t)= E \ K_M (1- e^\frac{-t}{\tau_m}), \ as \ shown \ in  \ fig \ 5$$
 
 The step response is very similar to that of an RC circuit charging from a step voltage input.
-The parameters of interest E K<sub>M</sub> and &tau;<sub>m</sub> are indicated in Fig below. 
-The steady state speed N, and hence the value of K<sub>M</sub> can easily be computed or measured.
+The parameters of interest <span class="fontCss2">E K<sub>M</sub></span> and <span class="fontCss">&tau;<sub>m</sub></span> are indicated in fig 5. 
 
-$$K_M = \frac{N}{E} \frac{rpm}{volt} = \frac{\pi N}{30 E_a} \frac{rad/sec}{volt}$$
+The steady state speed <span class="fontCss2">N</span>, and hence the value of <span class="fontCss2">K<sub>M</sub></span> can easily be computed or measured.
 
-<b>Measurement of &tau;<sub>m</sub>:</b> The time taken by the motor speed to rise from zero and attain 63.2% of ω<sub>ss</sub>,
+$$\omega(t)\vert_{t\rightarrow\infty} = \omega_{ss} = E \ K_M$$
+
+$$or, \ K_M = \frac{N}{E} \frac{rpm}{volt} = \frac{\pi N}{30 E_a} \ \frac{rad/s}{volt}$$
+
+<span class="fontCss">&tau;<sub>m</sub></span> is the time taken by the motor speed to rise from zero and attain 63.2% of 
+<i style="font-family:'Sitka Text'">&omega;<sub>ss</suab></i>, where <i style="font-family:'Sitka Text'">&omega;<sub>ss</suab></i> is the steady state speed (rad/s) of the motor.
 
 <div align="center">				
-<img alt="" class="img-fluid" src="./images/t4.png" style="width:45%;height:10%;">
-</div>	
-        
+<img alt="" class="img-fluid" src="./images/t4.png" class="img-fluid"><br/>
+<b>Fig 5: Step response of the motor</b>
+</div><br><br/>
+
+<b>Calculations from plots:</b><br/>
+
+<b>Calculation of the motor constant <span class="fontCss2">K<sub>M</sub></span> (rpm/volts), generator constant <span class="fontCss2">K<sub>G</sub></span> (volts/rpm) and viscous friction coefficient of motor (<span class="fontCss2">B</span>) :</b><br/>
+
+The motor constant <span class="fontCss2">K<sub>M</sub></span> is calculated from the plot 'Speed (<span class="fontCss2">N</span>) Vs. Motor armature voltage (<span class="fontCss2">E<sub>a</sub></span>)' as
+shown in fig 6. Consider a slope is taken between points (<span class="fontCss2">A<sub>2</sub>,B<sub>2</sub></span>) and (<span class="fontCss2">A<sub>1</sub>,B<sub>1</sub></span>) first. then the <span class="fontCss2">K<sub>M</sub></span> will be
+
+$$K_M = \frac{B_{2} - B_{1}}{A_{2} - A_{1}} \ rpm/volts$$
+
+Where, <span class="fontCss2">B<sub>2</sub></span> is speed (rpm) of the motor at armature voltage of <span class="fontCss2">A<sub>2</sub></span> volts and 
+<span class="fontCss2">B<sub>1</sub></span> is speed (rpm) of the motor at armature voltage of <span class="fontCss2">A<sub>1</sub></span> volts.
+<br/>
+<div align="center">				
+<img alt="" class="img-fluid" src="./images/Chart1.jpg" class="img-fluid"><br/>
+<b>Fig 6: Motor constant <span class="fontCss2">K<sub>M</sub></span> calculation</b>
+</div><br><br/>
+
+The generator constant <span class="fontCss2">K<sub>G</sub></span> is calculated from the plot 
+'Generator voltage (<span class="fontCss2">E<sub>g</sub></span>) Vs. Speed (<span class="fontCss2">N</span>)' as
+shown in fig 7. Consider a slope is taken between points (<span class="fontCss2">A<sub>2</sub>,B<sub>2</sub></span>) and (<span class="fontCss2">A<sub>1</sub>,B<sub>1</sub></span>) first. Then the <span class="fontCss2">K<sub>G</sub></span> will be
+
+$$K_G = \frac{B_{2} - B_{1}}{A_{2} - A_{1}} \ volts/rpm$$
+
+Where, <span class="fontCss2">B<sub>2</sub></span> is generator voltage (volts) at speed of <span class="fontCss2">A<sub>2</sub></span> rpm and 
+<span class="fontCss2">B<sub>1</sub></span> is generator voltage (volts) at speed of <span class="fontCss2">A<sub>1</sub></span> rpm.
+<br/>
+<div align="center">				
+<img alt="" class="img-fluid" src="./images/Chart2.jpg" class="img-fluid"><br/>
+<b>Fig 7: Generator constant <span class="fontCss2">K<sub>G</sub></span> calculation</b>
+</div><br><br/>
+
+The viscous friction coefficient of motor (<span class="fontCss2">B</span>) is calculated from the plot 
+'Torque (<span class="fontCss2">T<sub>M</sub></span>) Vs. Speed (<span class="fontCss2">N</span>)' as
+shown in fig 8. Consider a slope is taken between points (<span class="fontCss2">A<sub>2</sub>,B<sub>2</sub></span>) and (<span class="fontCss2">A<sub>1</sub>,B<sub>1</sub></span>) first. Then the <span class="fontCss2">B</span> will be
+
+$$B = \frac{B_{2} - B_{1}}{A_{2} - A_{1}} \ newton-meter/rpm$$
+
+Where, <span class="fontCss2">B<sub>2</sub></span> is torque (newton-meter) at speed of <span class="fontCss2">A<sub>2</sub></span> rpm and 
+<span class="fontCss2">B<sub>1</sub></span> is torque (newton-meter) at speed of <span class="fontCss2">A<sub>1</sub></span> rpm.
+Calculate <span class="fontCss2">B</span> in newton-meter/rad/sec. The negative sign in calculation will depict negative slope (ignore it for calculating the motor inertia <span class="fontCss2">J</span>).
+<br/>
+<div align="center">				
+<img alt="" class="img-fluid" src="./images/Chart3.png" class="img-fluid"><br/>
+<b>Fig 8: Viscous friction coefficient of motor (<span class="fontCss2">B</span>) calculation</b>
+</div><br><br/>
+
+The motor inertia <span class="fontCss2">J</span> (newton-meter/rad/sec<sup>2</sup>) is calculated using the formula below (<span class="fontCss">&tau;<sub>m</sub></span> is taken in sec):
+
+$$J = \tau_m (B + \frac{{K_b}^2}{R_a}) \ where, \tau_m \ is \ the \ motor \ time \ constant \ and \ R_a = 4 \Omega$$
+
+
+				
+<link href="./simulation/css/DC.css" rel="stylesheet">			    
+						
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>								
