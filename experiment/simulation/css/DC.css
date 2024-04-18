@@ -142,9 +142,18 @@ tr:nth-child(odd) {
     bottom: 85.2%;
     padding: 4px;
     visibility: hidden;
+ }
 
-
-
+ .fontCss{
+  font-family:'Bodoni MT';
+  font-size:20px;
+  font-style: italic; 
+  }
+  .fontCss2{
+  font-family:'Bodoni MT';
+  
+  font-style: italic; 
+  }
 
 
 

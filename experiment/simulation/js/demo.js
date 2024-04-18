@@ -185,7 +185,7 @@ jsPlumb.ready(function () {
 			 //delete clicked connection
       instance.bind("click", function (conn, originalEvent) {
 		  
-           if ( confirm("Delete connection from " + conn.sourceId + " to " + conn.targetId + "?")) {////for clicking on a connection
+           if ( confirm("Delete connection ?")) {////for clicking on a connection
                instance.deleteConnection(conn);			  
 			         }
        }); 
