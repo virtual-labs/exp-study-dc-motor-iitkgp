@@ -548,11 +548,11 @@ document.getElementById('chartContainer').style.display  = "none";
 	  
 	  axisX:{
         interlacedColor: "#B2F9FA",
-        title: "Time (sec.)"
+        title: "Time (sec)"
       },
     axisY: [
 	      {/////output Y axis
-            title: "Motor speed(ω (t))",
+            title: "Motor speed ω(t)",
 			
 			//maximum:0.03,
         }		

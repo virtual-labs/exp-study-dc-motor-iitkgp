@@ -2,8 +2,8 @@
 #### Books
 
 1) Automatic Control Systems - Farid Golnaraghi, Benjamin C. Kuo (2009, Wiley)
-2) Modern Control Engineering - K. Ogata, Prentice Hall of India Pvt. Ltd.
-3) Electrical Machinery-Dr P S Bimbhra, Khanna Publishers
+2) Modern Control Engineering - K. Ogata, Prentice Hall, 2010
+3) Electrical Machinery-Dr P S Bimbhra, Khanna Publishers (2011)
 4) Principles of Electric Machines and Power Electronics-P. C. Sen ,Wiley (2013)
 
 
