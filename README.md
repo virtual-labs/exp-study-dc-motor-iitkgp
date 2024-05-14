@@ -7,7 +7,7 @@
 <b>Discipline | <b> Electrical Engineering 
 :--|:--|
 <b> Lab | <b> **Control and Instrumentation Lab**
-<b> Experiment|     <b> **Study of DC Motor and Experiment 7**
+<b> Experiment|     <b> **Study of DC Motor**
 
 
 ### About the Experiment 
@@ -15,7 +15,7 @@
 
 DC motors are most commonly used as actuators in electro-mechanical control systems or servo mechanisms. Compared to actuators like 2-phase ac motor and stepper motor, the dc motor has the advantage of higher torque and simpler driving circuit. However the presence of a commutator and a set of brushes with the problems of 
 sparking make the dc motor less durable. 
-
+					
 The study of the dynamic characteristics of the dc motor is important because the overall performance of the control system depends on it.
 
 This experiment is designed to obtain the torque-speed characteristics, compute the various parameters and finally determine the transfer function of a dc motor.			  

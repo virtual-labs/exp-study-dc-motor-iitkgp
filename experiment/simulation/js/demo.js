@@ -76,7 +76,7 @@ jsPlumb.ready(function () {
 					
 			endpoint_oven = {
             anchor: [0.5, 0.5, 0, -1],
-            connectorStyle: { strokeWidth: 10, stroke: "grey" },
+            connectorStyle: { strokeWidth: 9, stroke: "grey" },
             endpointsOnTop: true,
             isSource: true,
             maxConnections: 1,
@@ -90,7 +90,7 @@ jsPlumb.ready(function () {
             return instance_black.addEndpoint(elId, endpoint_oven);
 					},
 					
-					endpoint_oven2 = {
+					endpoint_ovenlod = {
             anchor: [0.5, 0.5, 0, -1],
             connectorStyle: { strokeWidth: 15, stroke: "grey" },
             endpointsOnTop: true,
@@ -100,10 +100,10 @@ jsPlumb.ready(function () {
             dropOptions: { tolerance: "touch", hoverClass: "dropHover" }
         },
 
-		prepare_oven2 = function (elId) {
+		prepare_ovenlod = function (elId) {
             initAnimation(elId);            			
 			
-            return instance_black2.addEndpoint(elId, endpoint_oven2);
+            return instance_ovenlod.addEndpoint(elId, endpoint_ovenlod);
 					},					
 					
 
@@ -137,9 +137,9 @@ jsPlumb.ready(function () {
         Container: "canvas"
     });
 	
-	instance_black2 = jsPlumb.getInstance({
+	instance_ovenlod = jsPlumb.getInstance({
         DragOptions: { cursor: 'wait', zIndex: 20 },
-        Endpoint: [ "Image", { url: "./images/ovendot.png" } ],
+        Endpoint: [ "Image", { url: "./images/loddot.png" } ],
         Connector: [ "Bezier", { curviness:80 } ],
         Container: "canvas"
     });
@@ -178,8 +178,7 @@ jsPlumb.ready(function () {
             e.stopPropagation();
             instance.detachEveryConnection();
         });*/
-		
-		
+				
              instance.connect({ source: e5, target: e6 });
 			 
 			 //delete clicked connection

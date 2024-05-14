@@ -78,7 +78,8 @@
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
-    },    
+    },
+    
     {
       "question": "8. Which motor is not suitable for the application of centrifugal pumps?",
       "answers": {
@@ -115,7 +116,7 @@
     },
 	
 	{
-      "question": "11. dc series motors are used in electric traction. What happens to the speed and current of a dc motor if there is a sudden drop in the mains voltage?",
+      "question": "11. DC series motors are used in electric traction. What happens to the speed and current of a dc motor if there is a sudden drop in the mains voltage?",
       "answers": {
         "a": "Speed decreases and current also decreases",
         "b": "Speed decreases and current increases",
