@@ -1,10 +1,10 @@
 ## References
 #### Books
 
-1) Automatic Control Systems - Farid Golnaraghi, Benjamin C. Kuo (2009, Wiley)
-2) Modern Control Engineering - K. Ogata (2010, Prentice Hall)
-3) Electrical Machinery - Dr P S Bimbhra (2011, Khanna Publishers)
-4) Principles of Electric Machines and Power Electronics - P. C. Sen (2013, Wiley)
+1) Farid Golnaraghi, Benjamin C. Kuo - Automatic Control Systems (2009, Wiley)
+2) Katsuhiko Ogata - Modern Control Engineering (2010, Prentice Hall)
+3) Dr P S Bimbhra - Electrical Machinery (2011, Khanna Publishers)
+4) P. C. Sen - Principles of Electric Machines and Power Electronics (2013, Wiley)
 
 
 #### Video Lectures
