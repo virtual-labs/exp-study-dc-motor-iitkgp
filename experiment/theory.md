@@ -1,7 +1,8 @@
 # Theory
 
 The first step in the analysis of control system is to derive its mathematical model to understand the working of the complete system.
-               			   
+<br><br>
+
 <b>The Plant (Coupled-DC Motor-Generator Set)</b><br/>
 
 In a dc motor, an armature rotates inside a magnetic field. The basic working principle of a dc motor is based on the fact that when ever
@@ -31,11 +32,14 @@ Further, a slotted disk mounted on the common shaft produces 6 pulses per revolu
 through an opto - interrupter, which is used in a 4-digit speed display in r.p.m.<br/>
 
 The specifications of the main experimental dc motor are:<br/>
+<ul>
+<li>Operating voltage :12 V dc</li>
+<li>No load current: 0.09 A</li>
+<li>Full load current: 1.0 A</li>
+<li>Torque: 30 mN-m / 300 g-cm</li>
+</ul><br/>
 
-• Operating voltage :12 V dc<br/>
-• No load current: 0.09 A<br/>
-• Full load current: 1.0 A<br/>
-• Torque: 30 mN-m / 300 g-cm<br/>
+
 
 <br/><b>Permanent Magnet DC Motor (PMDC Motor)</b><br/>
 
@@ -114,7 +118,7 @@ $$\frac{\omega(s)}{E_a(s)} = \frac{K_T}{(sL_a + R_a)(sJ + B) + K_T K_b} \tag{5}$
 
 Assuming the inductance of the armature circuit to be very small, the motor transfer function may be written as, 
 
-$$G_M(s) = \frac{\omega(s)}{E_a(s)} = \frac{K_T/R_a}{Js + B + \frac{K_T K_b}{R_a}} = \frac{K_M}{s\tau_m + 1}    \tag{6}$$
+$$G_M(s) = \frac{\omega(s)}{E_a(s)} = \frac{K_T/R_a}{Js + B + \frac{K_T K_b}{R_a}} = \frac{K_M}{s\tau_m + 1} \tag{6}$$
 
 Motor Gain Constant (<span class="fontCss2">K<sub>M</sub></span>)
 
@@ -201,7 +205,7 @@ characteristics obtained under steady state conditions or constant speed operati
 
 In response to a step input,
 
-$$e_a(t) = E \ U(t), \ i.e. \ E_a(s) = \frac{1}{s} \tag{16}E$$
+$$e_a(t) = E \ U(t), \ i.e. \ E_a(s) = \frac{1}{s}E \tag{16}$$
 
 The motor speed will follow the expression,
 
@@ -228,7 +232,7 @@ $$or, \ K_M = \frac{N}{E} \frac{rpm}{volt} = \frac{\pi N}{30 E} \ \frac{rad/s}{v
 
 <b>Calculations from plots</b><br/>
 
-<b>Calculation of the motor constant <span class="fontCss2">K<sub>M</sub></span> (rpm/volts), generator constant <span class="fontCss2">K<sub>G</sub></span> (volts/rpm) and viscous friction coefficient of motor (<span class="fontCss2">B</span>)</b><br/>
+<b>Calculation of the motor constant <span class="fontCss2">K<sub>M</sub></span> (rpm/volts), generator constant <span class="fontCss2">K<sub>G</sub></span> (volts/rpm) and viscous friction coefficient of motor (<span class="fontCss2">B</span>) </b><br/>
 
 The motor constant <span class="fontCss2">K<sub>M</sub></span> is calculated from the plot 'Speed (<span class="fontCss2">N</span>) Vs. Motor armature voltage (<span class="fontCss2">E<sub>a</sub></span>)' as
 shown in Fig. 6. Consider a slope is taken between points (<span class="fontCss3">c<sub>2</sub>, d<sub>2</sub></span>) and (<span class="fontCss3">c<sub>1</sub>, d<sub>1</sub></span>) first. then the <span class="fontCss2">K<sub>M</sub></span> will be
@@ -274,10 +278,29 @@ Calculate <span class="fontCss2">B</span> in newton-meter/rad/sec. The negative 
 
 The motor inertia <span class="fontCss2">J</span> (newton-meter/rad/sec<sup>2</sup>) is calculated using the formula below (<span class="fontCss">&tau;<sub>m</sub></span> is taken in sec)
 
-$$J = \tau_m (B + \frac{K_b^2}{R_a}) \tag{23}$$
+$$J = \tau_m (B + \frac{{K_b}^2}{R_a}) \tag{23}$$
 
-where, <span class="fontCss">&tau;<sub>m</sub></span> is the motor time constant and <span class="fontCss2">R<sub>a</sub></span> = 4 &ohm;
-				
+where, <span class="fontCss">&tau;<sub>m</sub></span> is the motor time constant and <span class="fontCss2">R<sub>a</sub></span> = 4 &ohm;<br/><br/>
+
+<b>DC Motor panel in simulation</b><br/>
+<div align="center">				
+<img alt="" class="img-fluid" src="./images/ps2.png" class="img-fluid"><br/>
+<b>Fig. 9. DC Motor panel in simulation</b>
+</div><br>
+<ul>				
+<li>The dc motor panel consists of 'ON' button to provide power supply to the total unit.</li>
+<li>It also contains a 'MOTOR' switch to provide armature voltage (E<sub>a</sub>) to the motor.</li>
+<li>The 'RESET'	switch is kept in 'RESET' position during the no load and load tests of the dc motor.</li>
+<li>It is kept in 'READY' position to display the time constant during finding step response of the motor.</li>
+<li>The armature voltage E<sub>a</sub> is varied by rotating 'Knob1'.</li>
+<li>The voltage E<sub>s</sub> is set through 'Knob2' to 63.2 % of generated emf E<sub>g</sub> during calculation of the motor time constant.</li>
+<li>The 'Knob3' is varied to provide loads to the motor. The load increases with increasing load steps (Fig. 10).</li>
+</ul> 
+<div align="center">				
+<img alt="" class="img-fluid" src="./images/load.png" class="img-fluid"><br/>
+<b>Fig. 10.  Loading system Schematic of DC Motor</b>
+</div><br>
+
 
 				
 <link href="./simulation/css/DC.css" rel="stylesheet">			    

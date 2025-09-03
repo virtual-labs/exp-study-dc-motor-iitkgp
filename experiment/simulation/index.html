@@ -13,7 +13,7 @@
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/adik.css" rel="stylesheet">
+  <!-- <link href="../css/adik.css" rel="stylesheet"> -->
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -82,8 +82,10 @@ font-style: italic;
   
   
 </head>
+
+
 <body><!--body tag start-->
-    <div class="container p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
+    <div class=" p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
         <div class="row"><!--First row under 1st container start-->
             <div class="col-md-3"><!--First col under 1st row start-->
                 <img class="img-fluid rounded" src="./images/vlabs.png" alt="VLabs logo">
@@ -98,50 +100,61 @@ font-style: italic;
     
         <hr>
         <div class="row"><!--2nd row under 1st container start-->
-            <div class="col-md-3"><!--First col under 2nd row start-->
+            <!-- <div class="col-md-3"><!--First col under 2nd row start--
 
-            </div><!--First col under 2nd row end-->
-            <div class="col-md-6"><!--2nd col under 2nd row start-->
-                <p class="h1"> <b>Simulation</b> </p>
+            </div> --><!--First col under 2nd row end-->
+            <div class="col-md-12"><!--2nd col under 2nd row start-->
+                <p class="h1"> <b>Simulation </b> </p>
             </div><!--2nd col under 2nd row end-->
-            <div class="col-md-3"><!--3rd col under 2nd row start-->
+            <!-- <div class="col-md-3"><!--3rd col under 2nd row start--
 
-            </div><!--3rd col under 2nd row end-->
+            </div> --><!--3rd col under 2nd row end-->
         </div><!--2nd row under 1st container end-->
         <hr>
         
     </div><!--First Container under body tag end-->
     
 	
-    <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
+    <div class=" p-3 my-5 text-left border"><!--3rd Container under body tag start-->
       <div class="row"><!--First row under 3rd container start-->
-        <div class="col-md-1"></div><!--First col under 3rd container start& end-->
-        <div class="col-md-10"><!--2nd col under 3rd container start-->
+       <!--  <div class="col-md-1"></div> --><!--First col under 3rd container start& end-->
+        <div class="col-md-12"><!--2nd col under 3rd container start-->
             <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
               <div id="inst" style="display:block;height:200px;overflow-y:auto;text-align:justify">
 			  <ol>
 					<b style="color:blue;text-align:center">Motor and Generator Characteristics</b><br>
-                      <li>First click on "Tests" button and click on 'No Load' to perform the experiment for finding the dc motor and generator characteristics.</li></br>
+                      <li>First click on "Tests" button  and click on 'No Load' to perform the experiment for finding the dc motor and generator characteristics.</li></br>
   
-					  <li>Click on 'ON' button to switch on the motor unit. Connect (blue dots for wire connection) 1-3, 
-					set 'MOTOR' switch to 'ON' by clicking on it. Set the 'RESET' switch to 'RESET'. Set load to 0 value. </li><br/>
+					  <li><ul><li>Click on 'ON' button to switch on the motor unit. Connect (blue dots for wire connection) 1-3.</li>
+					  <li><b>Note:</b> Example: connection point 1 - connection point 2 (drag the wire from connection point 1 by pressing left mouse button and release on connection point 2).</li>
+					  <li>Click on 'Check Connection' button.</li>
+					<li><b>Note:</b> Any wire connection can be deleted by clicking on the connected wire if required.</li>
+					<li>Set 'MOTOR' switch to 'ON' by clicking on it.</li>
+					<li> Set the 'RESET' switch to 'RESET'.</li>
+					<li>Set load to 0 value.</li></ul></li><br/>
 					 
-					 <li>Apply armature voltage E<sub>a</sub> through knob1 (start with 3 volts). Click on 'Simulate' button. Observe motor armature current (mA), speed (rpm). Now click on the
-						connected wire (1-3) to delete that and connect 2-3 , click on 'Simulate' button. Observe generator voltage E<sub>g</sub>.
-						Click on 'Table' button to get the observation table.</li></br>
+					 <li><ul><li>Apply armature voltage E<sub>a</sub> through rotating knob1 (start with 3 volts).</li>
+					 <li><b>Note:</b> To rotate any knob put the mouse cursor on the knob handle (blue line on the knob), a hand symbol will be showing. Press left mouse button, rotate clockwise to increase or anticlockwise to decrease values.</li>
+					 <li><b>Note:</b> If the desired value does not appear while rotating the knob in one attempt, try rotating it back and forth to reach the correct value.</li>
+					 <li>Click on 'Simulate' button. Observe motor armature current (mA), speed (rpm).</li>
+					 <li>Now click on the connected wire (1-3) to delete that and connect 2-3.</li>
+					 <li>Click on 'Check Connection' button.</li>
+					 <li>Click on 'Simulate' button. Observe generator voltage E<sub>g</sub>.</li>
+					<li>Click on 'Table' button to get the observation table.</li></ul></li></br>
 						
-					<li>Delete connection 2-3 and again connect 1-3, click on 'Simulate' button. Increase the armature voltage to 4 volts and follow
+						
+					<li>Delete connection 2-3 and again connect 1-3, click on 'Check Connection' button then on 'Simulate' button. Increase the armature voltage to 4 volts and follow
 					step 3.</li><br/> 
 
-					 <li> Vary E<sub>a</sub> from 5 - 12 volts and follow step 3.
-					 Now Click on 'Plot' button, then on 'Speed (N) Vs. Motor armature voltage (E<sub>a</sub>)'. From a slope of the plot
-					 calculate motor constant <span class="fontCSS">K<sub>M</sub></span> (rpm/volts) (calculation explained in theory). 
+					 <li><ul><li>Vary E<sub>a</sub> from 5 - 12 volts and follow step 3.</li>
+					 <li>Now Click on 'Plot' button, then on 'Speed (N) Vs. Motor armature voltage (E<sub>a</sub>)'.</li> 
+					 <li>From a slope of the plot calculate motor constant <span class="fontCSS">K<sub>M</sub></span> (rpm/volts) (calculation explained in theory).</li> 
 
-					 Again click on 'Generator voltage (E<sub>g</sub>) Vs. Speed (N)' under plot button. From a slope of this plot
-					 calculate generator constant <span class="fontCSS">K<sub>G</sub></span> (volts/rpm) (calculation explained in theory). 
+					 <li>Again click on 'Generator voltage (E<sub>g</sub>) Vs. Speed (N)' under plot button.</li>
+					 <li>From a slope of this plot calculate generator constant <span class="fontCSS">K<sub>G</sub></span> (volts/rpm) (calculation explained in theory).</li> 
 					 
-					 Plots can be downloaded by clicking on 'Download Plot' button. Now enter the values of <span class="fontCSS">K<sub>M</sub></span>
-					 and <span class="fontCSS">K<sub>G</sub></span> in the corresponding box under 'Result Block'.
+					 <li>Plots can be downloaded by clicking on 'Download Plot' button.</li>
+					 <li>Now enter the values of <span class="fontCSS">K<sub>M</sub></span> and <span class="fontCSS">K<sub>G</sub></span> in the corresponding box under 'Result Block'.</li></ul></li><br/>
 					 
 					<li>Bring back all the knobs to zero value. Set 'MOTOR' switch to 'OFF' by clicking on it again and switch off the motor unit.</li><br/><br> 
 					</ol>
@@ -149,37 +162,50 @@ font-style: italic;
 					<b style="color:blue;text-align:center">Torque-Speed Characteristics</b><br>
                       <li>First click on "Tests" button and click on 'Load' to perform the experiment for finding the dc motor torque-speed characteristics.</li></br>
   
-					  <li>Click on 'ON' button to switch on the motor unit. Connect 1-3, set 'MOTOR' switch to 'ON' by clicking on it. Set the 'RESET' switch to 'RESET'. Set load to 0 value. </li><br/>
+					  <li><ul><li>Click on 'ON' button to switch on the motor unit.</li>
+					  <li>Connect 1-3, click on 'Check Connection' button. set 'MOTOR' switch to 'ON' by clicking on it.</li>
+					  <li>Set the 'RESET' switch to 'RESET'. Set load to 0 value.</li></ul></li><br/>
 					 
-					 <li>Apply armature voltage E<sub>a</sub> through knob1 and set E<sub>a</sub> to 6 volts. Click on 'Simulate' button. Observe motor armature current (mA), speed (rpm). Now click on the
-						connected wire (1-3) to delete that and connect 2-3 , click on 'Simulate' button. Observe generator voltage E<sub>g</sub>.
-						Click on 'Table' button to get the observation data.</li></br>
+					 <li><ul><li>Apply armature voltage E<sub>a</sub> through knob1 and set E<sub>a</sub> to 6 volts.</li>
+					 <li>Click on 'Simulate' button. Observe motor armature current (mA), speed (rpm).</li>
+					 <li>Now click on the connected wire (1-3) to delete that and connect 2-3 , click on 'Check Connection' button then on 'Simulate' button. Observe generator voltage E<sub>g</sub>.</li>
+					<li>Click on 'Table' button to get the observation data.</li></ul></li></br>
 
-					 <li>Set load to 1 through knob3. Delete connection 2-3 and again connect 1-3. Click on 'Simulate' button and follow step 3. Now vary the load from 2 to 5 through knob3 and take observations following step 3. 
-					 Click on 'Simulate' button each time after a wire connection is made. Click on 'Plot' then click on 'Torque (T<sub>M</sub>) Vs. Speed (N)'.
-					Now from a slope of the plot calculate viscous friction coefficient <span class="fontCSS">B</span> (newton-meter/rad/sec) of motor and calculate average value of motor back emf constant <span class="fontCSS">K<sub>b</sub></span>
-					(volts/rad/sec) from the observation table. Now enter the values of <span class="fontCSS">B</span> and <span class="fontCSS">K<sub>b</sub></span> in the corresponding box under 'Result Block'.</li><br/> 
+					 <li><ul><li>Set load to 1 through knob3. Delete connection 2-3 and again connect 1-3. Click on 'Check Connection' button.</li>
+					 <li>Click on 'Simulate' button and follow step 3. Now vary the load from 2 to 5 through knob3 and take observations following step 3.</li> 
+					 <li>Click on 'Check Connection' button then on 'Simulate' button each time after a wire connection is made.</li>
+					 <li>Click on 'Plot' then click on 'Torque (T<sub>M</sub>) Vs. Speed (N)'.</li>
+					<li>Now from a slope of the plot calculate viscous friction coefficient <span class="fontCSS">B</span> (newton-meter/rad/sec) of motor and calculate average value of motor back emf constant <span class="fontCSS">K<sub>b</sub></span>
+					(volts/rad/sec) from the observation table.</li>
+					<li>Now enter the values of <span class="fontCSS">B</span> and <span class="fontCSS">K<sub>b</sub></span> in the corresponding box under 'Result Block'.</li></ul></li><br/> 
 
-					<li>Bring back all the knobs to zero value.
-					Follow steps 1-4 for E<sub>a</sub> = 8, 10 and 12 volts. Set 'MOTOR' switch to 'OFF' by clicking on it again and switch off the motor unit.</li><br/><br> 
+					<li><ul><li>Bring back all the knobs to zero value.</li>
+					<li>Follow steps 1-4 for E<sub>a</sub> = 8, 10 and 12 volts.</li>
+					<li>Set 'MOTOR' switch to 'OFF' by clicking on it again and switch off the motor unit.</li></ul></li><br/><br> 
 					</ol>
 					<ol>
 					<b style="color:blue;text-align:center">Step Response of Motor</b><br>
                       <li>First click on "Tests" button and click on 'Step Response' to perform the experiment for finding the dc motor transfer function.</li></br>
   
-					  <li>Click on 'ON' button to switch on the motor unit. Connect 1-3, set 'MOTOR' switch to 'ON' by clicking on it. Set the 'RESET' switch to 'RESET'. Set load to 0 value.</li><br/>
+					  <li><ul><li>Click on 'ON' button to switch on the motor unit.</li>
+					  <li>Connect 1-3, click on 'Check Connection' button, set 'MOTOR' switch to 'ON' by clicking on it.</li>
+					  <li>Set the 'RESET' switch to 'RESET'. Set load to 0 value.</li></ul></li><br/>
 					 
-					 <li>Apply armature voltage E<sub>a</sub> through knob1 and set E<sub>a</sub> to 8 volts. Click on 'Simulate' button. Observe motor armature current (mA), speed (rpm). Now click on the
-						connected wire (1-3) to delete that and connect 2-3 , click on 'Simulate'. Observe generator voltage E<sub>g</sub></li></br>
+					 <li><ul><li>Apply armature voltage E<sub>a</sub> through knob1 and set E<sub>a</sub> to 8 volts. Click on 'Simulate' button.</li>
+					 <li>Observe motor armature current (mA), speed (rpm).</li>
+					 <li>Now click on the connected wire (1-3) to delete that and connect 2-3 , click on 'Check Connection' button then on 'Simulate'.</li>
+					 <li>Observe generator voltage E<sub>g</sub></li></ul></li></br>
 						
-					<li>Now delete connection 2-3 and connect 4-3 , click on 'Simulate' to observe	E<sub>s</sub> value in DVM. Set E<sub>s</sub> through knob2 to 63.2 &percnt; of E<sub>g</sub> (measured above).</sub></li></br>
+					<li><ul><li>Now delete connection 2-3 and connect 4-3 , click on 'Check Connection' button then on 'Simulate' to observe E<sub>s</sub> value in DVM.</li>
+					<li>Set E<sub>s</sub> through knob2 to 63.2 &percnt; of E<sub>g</sub> (measured above).</sub></li></ul></li></br>
 						
-					<li>Set 'MOTOR' switch to 'OFF'. Set 'RESET' switch to 'READY'. Now set the 'MOTOR' switch to 'ON', click on 'Simulate' and observe the 'Time Constant (msec)'.</li><br/>
+					<li><ul><li>Set 'MOTOR' switch to 'OFF'. Set 'RESET' switch to 'READY'.</li>
+					<li>Now set the 'MOTOR' switch to 'ON', click on 'Simulate' and observe the 'Time Constant (msec)'.</li></ul></li><br/>
 					
-					 <li>Click on 'Table' to get the observation data. Observe the step response. Now find the motor inertia <span class="fontCSS">J</span> using
-					 the values of <span class="fontCSS">B, K<sub>b</sub></span> (calculated before) and <span class="fontCSS">&tau;<sub>m</sub></span> from observation table following the formula provided in 'Result Block'.
-					 Now enter the value of <span class="fontCSS">J</span> in corresponding box under 'Result Block'.
-					 Click on 'Show Transfer Function' button to get the transfer function of the motor.</li><br/> 
+					 <li><ul><li>Click on 'Table' to get the observation data. Observe the step response.</li>
+					 <li>Now find the motor inertia <span class="fontCSS">J</span> using the values of <span class="fontCSS">B, K<sub>b</sub></span> (calculated before) and <span class="fontCSS">&tau;<sub>m</sub></span> from observation table following the formula provided in 'Result Block'.</li>
+					 <li>Now enter the value of <span class="fontCSS">J</span> in corresponding box under 'Result Block'.</li>
+					 <li>Click on 'Show Transfer Function' button to get the transfer function of the motor.</li></ul></li><br/> 
 
 					<li> Bring back all the knobs to zero value. Follow steps (1-6) for E<sub>a</sub>= 10 and 12 volts. Set 'MOTOR' switch to 'OFF' and switch off the motor unit..
 					</li><br/><br> 
@@ -189,16 +215,16 @@ font-style: italic;
             </p> 
           </div><!--2nd col under 3rd container end-->
 		  
-        <div class="col-md-1"></div><!--3rd col under 3rd container start& end-->
+        <!-- <div class="col-md-1"></div> --><!--3rd col under 3rd container start& end-->
       </div><!--First row under 3rd container end-->
     </div><!--3rd Container under body tag end-->
 	
-    <div class="container p-3 my-5 text-center border" id="canvas" ><!--Fourth container under body tag start-->
+    <div class="p-3 my-5 text-center border" id="canvas" ><!--Fourth container under body tag start-->
 	
 	
 		<div class="row my-5 gy-2"><!--- 1st row under fourth container start--->			
         
-			<div class="col-md-12" ><!--1st col under 1st row start -->
+			<div class="col-md-6" ><!--1st col under 1st row start -->
 				  <!-- Code Start here--> 
 				<div class="img-container"><!--img container div start-->
 				
@@ -270,8 +296,16 @@ font-style: italic;
 					  </div>
 					</div>
 					
+					<div class="p-1">
+				  <button type="button" id="chkConn" class="btn btn-primary ">Check Connection</button>
+					</div> 
+					
+					<div class="p-1">
+				  <button type="button" id="simu" onclick="simulate()"  class="btn btn-success " disabled=disabled>Simulate</button>
+				  </div>
+					
 					<div class="dropdown p-1">
-					  <button class="btn btn-primary dropdown-toggle" type="button"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  <button class="btn btn-primary dropdown-toggle" type="button" id="pb" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled=disabled>
 						Plot
 					  </button>
 					  <div class="dropdown-menu" >
@@ -282,23 +316,17 @@ font-style: italic;
 					</div>					 			
 					
 				  <div class="p-1">
-				  <button type="button" id="simu" onclick="simulate()"  class="btn btn-success " >Simulate</button>
-					<button type="button" onclick="Tabled()"  class="btn btn-primary " >Table</button>
+				  <!-- <button type="button" id="simu" onclick="simulate()"  class="btn btn-success " disabled=disabled>Simulate</button> -->
+					<button type="button" id="tb" onclick="Tabled()"  class="btn btn-primary " disabled=disabled>Table</button>
 				  <!-- <button type="button" onclick="Result()"  class="btn btn-primary " >Result</button>
 				   -->
-				  <input type="number" id="testchk" min="1" value="1" max="3" style="visibility:hidden;" ></div></div>					
+				  <input type="number" id="testchk" min="0" value="0" max="3" style="visibility:hidden;" >
+				  <input type="number" id="conchk" min="0" value="0" max="10" style="visibility:hidden;" >
+				  
+				  </div></div>					
 					
 			</div><!---end of 1st col under 1st row--->	
-			
-        </div><!--1st row under fourth container end-->
-
- 
-        
-	<div class="row my-5 gy-2"><!--- 2nd row under fourth container start--->
-	
-		<div class="col-md-2 "></div><!--1st col under 2nd row start and end -->
-		
-			<div class="col-md-8 "><!--2nd col under 2nd row start -->	
+			<div class="col-md-6"><!--2nd col under 2nd row start -->	
 			
 				<div class="img-container"><!--img container div start--> 
 					  
@@ -323,9 +351,43 @@ font-style: italic;
 							   <input type="number" id="counterchk" min="1" value="1" max="2" style="visibility:hidden;" >
 							
 				</div>
+			
+        </div><!--1st row under fourth container end-->
+
+ 
+        
+	<!-- <div class="row my-5 gy-2"><!--- 2nd row under fourth container start---
+	
+		<div class="col-md-2 "></div><!--1st col under 2nd row start and end --
 		
-		<div class="col-md-2 "></div><!--3rd col under 2nd row start and end -->		
-			</div><!--- 2nd row under fourth container end--->	
+			<div class="col-md-8 "><!--2nd col under 2nd row start --
+			
+				<div class="img-container"><!--img container div start-- 
+					  
+					<div id="bd6"></div>
+					  
+					<img class="img-fluid" id="load"  src="./images/loadbox.png "/>	
+				
+					<input type="number" id="motor_speed" value="0"  readonly="readonly"><br/></br>
+						<!---knob 3 1st col 1st row--------->
+						<!-- <div class="bluedot" id="knob3" style=" width:31%;height:28%;top:49%;left:33%;pointer-events:none;">
+						<div class="handlep" id="knob3p" onclick="rotate5()"style="width:30%;height:30%;top:33%;left:0%;"></div>
+						<div class="handlen" id="knob3n"onclick="rotate6()" style="width:30%;height:30%;top:33%;left:70%;"></div>
+						 --
+						<div id="knob3" class="dial"  style=" width:31%;height:28%;top:49%;left:33%;pointer-events:none;">
+						<div class="dialhandle" style="width:20%;height:5%;top:85%;left:20%;transform:rotate(304deg)"></div>				
+						</div>
+						<input type="number" id="RL" min="0" value="0" max="5" step="1" style="position:absolute;width:23%;height:5%;top:78%;left:39%;text-align:center; background: transparent;border:none"readonly="readonly">
+						
+							   
+							   </div>
+							   
+							   <input type="number" id="counterchk" min="1" value="1" max="2" style="visibility:hidden;" >
+							
+				</div>
+		
+		<div class="col-md-2 "></div><!--3rd col under 2nd row start and end --		
+			</div> --><!--- 2nd row under fourth container end--->	
 			
 			
 			<div class="row my-5 gy-2">
@@ -404,8 +466,8 @@ font-style: italic;
 			
 			
 		<div class="row my-5 gy-2">
-			<div class="col-md-1"></div>
-			<div class="col-md-10">	
+			<div class="col-md-2"></div>
+			<div class="col-md-8">	
 	
 			
 			
@@ -459,28 +521,28 @@ font-style: italic;
 			</div>
 	
 			</div>
-			<div class="col-md-1"></div>
+			<div class="col-md-2"></div>
 		</div>
 		
 
 
 	 <div class="row justify-content-center"><!-----------------------graph T vs. w----------------------------------------->
 		
-	 
-			<div class="col-md-12">
-				<div id = "plotbucket" class="content-center" style="display:none; position: relative; border:3px solid white;height:530px;width:823px ">
+	 <div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div id = "plotbucket" class="content-center" style="display:none; position:relative; border:3px solid white;height:600px;width:1000px ">
 				<button type="button" id="exportChart" class="btn btn-primary"  style="display:none;position:absolute;left:20%;">Download Plot</button>
 				<button type="button" id="result" class="btn btn-primary" onclick="Refresh()"  style="display:none;position:absolute;left:35%">OK</button><br/><br/>
-					<div id="chartContainer"  style="display:none; position:absolute; height: 50%; width: 40%;z-index:1 "></div>
-					<div id="chartContainer2"  style="display:none; position:absolute; height: 50%; width: 40%;z-index:1 "></div>
-					<div id="chartContainer3"  style="display:none; position:absolute; height: 50%; width: 40%;z-index:1 "></div>
-					<div id="chartContainer4"  style="display:none; position:absolute; height: 50%; width: 40%;z-index:1 "></div>
+					<div id="chartContainer"  style="display:none; position:absolute; height: 80%; width: 100%;z-index:1 "></div>
+					<div id="chartContainer2"  style="display:none; position:absolute; height: 80%; width: 100%;z-index:1 "></div>
+					<div id="chartContainer3"  style="display:none; position:absolute; height: 80%; width: 100%;z-index:1 "></div>
+					<div id="chartContainer4"  style="display:none; position:absolute; height: 80%; width: 100%;z-index:1 "></div>
 					
 				</div>
 				
 			</div>
 			
-			
+		<div class="col-md-2"></div>	
 		
 	</div>	
 
@@ -492,7 +554,7 @@ font-style: italic;
       <!--</div>
     </div>-->
 
-    <div class="container p-3 my-5 text-primary text-center border"><!--Last and fifth container under body tag start-->
+    <div class=" p-3 my-5 text-primary text-center border"><!--Last and fifth container under body tag start-->
       <div class="row">
         <footer>
           <div class="row ce">
@@ -750,6 +812,14 @@ function onMouseMove3(event)
       main1();
 	  main2();
 	  main3();
+	  
+	  ////CODE FOR ROBUSTNESS OF KNOB FUNCTIONS/////
+if (performance.navigation.type === 1) { // 1 = Reload
+      // Save a flag to indicate the redirect started
+      localStorage.setItem("redirectFromReload", "true");
+      // Redirect to a.html
+      window.location.href = "index.html";
+    }
 
 	</script>
 	
