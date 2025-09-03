@@ -130,37 +130,36 @@ tr:nth-child(odd) {
   }
    #bd5{
     position: absolute;
-    left: 44%;/*74%;*/
-    bottom: 17%;/*6%;*/
+    left: 48%;/*74%;*/
+    bottom: 2%;/*6%;*/
     padding: 4px;
-	
+
   }
 
  #bd6{
     position: absolute;
     left: 49.8%;/*93.8%;*/
-    bottom: 99%;/*85.2%;*/
+    bottom: 4%;/*85.2%;*/
     padding: 4px;
-    visibility: hidden;
+    
  }
 
-
- .fontCss{
-  font-family:'Bodoni MT';
-  font-size:20px;
-  font-style: italic; 
-  }
-  .fontCss2{
-  font-family:'Bodoni MT';
-  
-  font-style: italic; 
-  }
-  .fontCss3{
-  font-family:'Georgia';
-  
-  font-style: italic; 
-  font-weight: 400;
-  }
+.fontCss{
+ font-family:'Bodoni MT';
+ font-size:20px;
+ font-style: italic; 
+ }
+ .fontCss2{
+ font-family:'Bodoni MT';
+ 
+ font-style: italic; 
+ }
+ .fontCss3{
+ font-family:'Georgia';
+ 
+ font-style: italic; 
+ font-weight: 400;
+ }
 
 
 

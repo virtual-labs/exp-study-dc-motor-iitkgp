@@ -142,9 +142,13 @@ function rotate1(){
 	document.getElementById('motor_tau').style.color="red"; 
 	document.getElementById('motor_speed').style.color="red";
 	
-	document.getElementById('knob1').style['pointer-events'] = "auto";
+	//document.getElementById('knob1').style['pointer-events'] = "auto";
 	document.getElementById('knob2').style['pointer-events'] = "auto";
 	document.getElementById('knob3').style['pointer-events'] = "auto";
+	
+	//document.getElementById('pb').disabled=false;
+	//document.getElementById('tb').disabled=false;
+	//document.getElementById('simu').disabled=false;
  }
 
 else if(document.getElementById('pon').src.match("./images/on.png")){
@@ -164,6 +168,10 @@ else if(document.getElementById('pon').src.match("./images/on.png")){
 	document.getElementById('knob1').style['pointer-events'] = "none";
 	document.getElementById('knob2').style['pointer-events'] = "none";
 	document.getElementById('knob3').style['pointer-events'] = "none";
+	
+	document.getElementById('pb').disabled=true;
+	document.getElementById('tb').disabled=true;
+	document.getElementById('simu').disabled=true;
 	 
  }
 
@@ -221,6 +229,8 @@ var J = parseFloat(4.47087522 * Math.pow(10,-5));///Motor inertia from observati
 var Eg;
 function No_Load(){
 	
+	if(document.getElementById('Ea').value != 0 && document.getElementById('RL').value==0){
+	
 var Ea = document.getElementById('Ea').value;
 	
 var speed = (parseFloat(Ea * KM));	
@@ -237,8 +247,14 @@ var Ia = parseFloat((parseFloat(Ea-Eb)/Ra)*1000);
 	
 document.getElementById('Eg').value = Eg;
 document.getElementById('motor_arm_current').value = Ia;
-document.getElementById('motor_speed').value = speed ;	
-	
+document.getElementById('motor_speed').value = speed ;
+	}	
+	else if (document.getElementById('Ea').value == 0){
+		alert('Apply armature voltage.');
+	}
+	else if (document.getElementById('RL').value != 0){
+		alert('Set load to 0 value.');
+	}
 }
 ///////////////Math model with loading gnerator////////////////////////////////////////////////////
 var n,c;
@@ -257,6 +273,7 @@ nl12=parseFloat(4740);
  */
  
 function loadtest(){
+	if(document.getElementById('Ea').value != 0){
 	No_Load();
 	
 var Ea = document.getElementById('Ea').value;
@@ -341,13 +358,16 @@ var kg2= parseFloat((KG*60)/parseFloat(2*Math.PI));
 document.getElementById('motor_speed').value = n;
 document.getElementById('Eg').value = Eg;
 document.getElementById('motor_arm_current').value = Ia;
-
+	}
+	else{
+		alert('Apply armature voltage.');
+	}
 
 }
 
 var Timeconst,inertia;
 function step_response(){
-	
+if(document.getElementById('Ea').value != 0 && document.getElementById('RL').value==0){	
 No_Load();
 
 document.getElementById('vchk').value = document.getElementById('Ea').value;
@@ -369,7 +389,13 @@ else if(document.getElementById('RL').value!=0){
 	alert('Go through the instructions properly\n Load should be zero or knob3 should be at zero value');///\n Set ‘RESET’ switch to ‘READY’\nSwitch on the motor');
 	
 }
-
+}
+else if (document.getElementById('Ea').value == 0){
+		alert('Apply armature voltage.');
+	}
+	else if (document.getElementById('RL').value != 0){
+		alert('Set load to 0 value.');
+	}
 
 }
 

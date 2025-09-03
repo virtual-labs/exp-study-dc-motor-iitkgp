@@ -58,7 +58,7 @@ jsPlumb.ready(function () {
 	// for all live red connection//
         endpoint = {
             anchors: [0.5, 0.5, 0, -1],
-            connectorStyle: { strokeWidth: 8, stroke: "#C50806" },
+            connectorStyle: { strokeWidth: 5, stroke: "#C50806" },
             endpointsOnTop: true,
             isSource: true,
             maxConnections: 100,
@@ -90,7 +90,7 @@ jsPlumb.ready(function () {
             return instance_black.addEndpoint(elId, endpoint_oven);
 					},
 					
-					endpoint_ovenlod = {
+					/* endpoint_ovenlod = {
             anchor: [0.5, 0.5, 0, -1],
             connectorStyle: { strokeWidth: 15, stroke: "grey" },
             endpointsOnTop: true,
@@ -104,7 +104,7 @@ jsPlumb.ready(function () {
             initAnimation(elId);            			
 			
             return instance_ovenlod.addEndpoint(elId, endpoint_ovenlod);
-					},					
+					}, */					
 					
 
     // this is overridden by the YUI demo.
@@ -131,18 +131,18 @@ jsPlumb.ready(function () {
     });
 	
 	instance_black = jsPlumb.getInstance({
-        DragOptions: { cursor: 'wait', zIndex: 20 },
+        DragOptions: { cursor: 'wait', zIndex: -1 },
         Endpoint: [ "Image", { url: "./images/ovendot.png" } ],
-        Connector: [ "Bezier", { curviness:80 } ],
+        Connector: [ "Bezier", { curviness:200 } ],
         Container: "canvas"
     });
 	
-	instance_ovenlod = jsPlumb.getInstance({
+	/* instance_ovenlod = jsPlumb.getInstance({
         DragOptions: { cursor: 'wait', zIndex: 20 },
         Endpoint: [ "Image", { url: "./images/loddot.png" } ],
         Connector: [ "Bezier", { curviness:80 } ],
         Container: "canvas"
-    });
+    }); */
 	
 	
 	
@@ -180,13 +180,29 @@ jsPlumb.ready(function () {
         });*/
 				
              instance.connect({ source: e5, target: e6 });
+			 e5.canvas.style.pointerEvents = "none";///disable first
+			 e5.setEnabled(false);///stop the reconnection
+			 e6.canvas.style.pointerEvents = "none";///disable first
+			 e6.setEnabled(false);///stop the reconnection
 			 
 			 //delete clicked connection
       instance.bind("click", function (conn, originalEvent) {
+		   if((conn.sourceId!='bd5' && conn.targetId!='bd6')){
 		  
-           if ( confirm("Delete connection ?")) {////for clicking on a connection
+		  ///NEW ADDED FOR LOOP TO DISPLAY ENDPOINT NAMES DURING DELETE CONNECTION
+		 for(var cpoint =1; cpoint<=6; cpoint++){
+			 if(conn.sourceId=='bd'+cpoint){
+				 name1 = cpoint;
+			 }
+			 if(conn.targetId=='bd'+cpoint){ 
+		  name2= cpoint;
+		 }
+		 } 	  
+		  
+           if ( confirm('Delete connection from'+' ' + name1 +' '+ 'to' + ' '+ name2 + '?')) {////for clicking on a connection
                instance.deleteConnection(conn);			  
 			         }
+		   }
        }); 
 		
   
@@ -197,7 +213,308 @@ jsPlumb.ready(function () {
     });
 	
 	
-      document.getElementById("simu").addEventListener("click", function () {
+      document.getElementById("chkConn").addEventListener("click", function () {
+        var correct_connections_1_3 = [
+            {
+                "source": "bd1",
+                "target": "bd3"
+            },
+
+            {
+                "source": "bd3",
+                "target": "bd1"
+            }
+        ];
+
+        var correct_connections_2_3 = [
+            {
+                "source": "bd2",
+                "target": "bd3"
+            },
+
+            {
+                "source": "bd3",
+                "target": "bd2"
+            }
+        ];        
+
+        var correct_connections_4_3 = [
+            {
+                "source": "bd4",
+                "target": "bd3"
+            },
+    
+            {
+                "source": "bd3",
+                "target": "bd4"
+            }
+        ];
+
+        var correct_connections_5_6 = [
+            {
+                "source": "bd5",
+                "target": "bd6"
+            },
+
+            {
+                "source": "bd6",
+                "target": "bd5"
+            }
+        ];
+
+        
+        
+		       //a connection outside this will invalidate the circuit
+        var allowed_connections = [
+            {
+                "source": "bd1",
+                "target": "bd3"
+            },
+    
+            {
+                "source": "bd3",
+                "target": "bd1"
+            },
+            
+            {
+                "source": "bd2",
+                "target": "bd3"
+            },
+
+            {
+                "source": "bd3",
+                "target": "bd2"
+            },
+
+            {
+                "source": "bd4",
+                "target": "bd3"
+            },
+    
+            {
+                "source": "bd3",
+                "target": "bd4"
+            },
+			
+			{
+                "source": "bd5",
+                "target": "bd6"
+            },
+
+            {
+                "source": "bd6",
+                "target": "bd5"
+            },
+			
+            
+			 
+        ];
+
+        var actual_connections = instance.getAllConnections();
+
+				var is_connected_1_3 = false;//for Ea
+				var is_connected_2_3 = false;//for Eg
+				var is_connected_4_3 = false;//for Es
+				var is_connected_5_6 = false;//for load
+				
+				
+       
+        var unallowed_connection_present = false;
+        var count =0; // counts number of connection
+
+
+        actual_connections.forEach(function (connection) {
+            count++;
+            var this_connection = {
+                "source": connection.sourceId,
+                "target": connection.targetId
+            };
+
+            if(!is_connected_1_3){
+                is_connected_1_3 = correct_connections_1_3.find(function (conn) {
+                    return conn.source === this_connection.source && conn.target === this_connection.target;
+                  });
+            }
+
+            if(!unallowed_connection_present){
+                unallowed_connection_present = !(allowed_connections.find(function (conn) {
+                    return (conn.source === this_connection.source && conn.target === this_connection.target);
+                }));
+            }
+            // if this_connection exists in correct_connections
+            // remove this connection from correct ones
+            // continue
+            // else
+            // return false
+
+        });
+
+        //checking for 3_7 connection
+        actual_connections.forEach(function (connection) {
+            var this_connection = {
+                "source": connection.sourceId,
+                "target": connection.targetId
+            };
+
+            if(!is_connected_2_3){
+                is_connected_2_3 = correct_connections_2_3.find(function (conn) {
+                    return conn.source === this_connection.source && conn.target === this_connection.target;
+                });
+            }
+              // if this_connection exists in correct_connections
+            // remove this connection from correct ones
+            // continue
+            // else
+            // return false
+        });
+		
+		actual_connections.forEach(function (connection) {
+            var this_connection = {
+                "source": connection.sourceId,
+                "target": connection.targetId
+            };
+
+            if(!is_connected_4_3){
+                is_connected_4_3 = correct_connections_4_3.find(function (conn) {
+                    return conn.source === this_connection.source && conn.target === this_connection.target;
+                });
+            }
+              // if this_connection exists in correct_connections
+            // remove this connection from correct ones
+            // continue
+            // else
+            // return false
+        });
+		
+		actual_connections.forEach(function (connection) {
+            var this_connection = {
+                "source": connection.sourceId,
+                "target": connection.targetId
+            };
+
+            if(!is_connected_5_6){
+                is_connected_5_6 = correct_connections_5_6.find(function (conn) {
+                    return conn.source === this_connection.source && conn.target === this_connection.target;
+                });
+            }
+              // if this_connection exists in correct_connections
+            // remove this connection from correct ones
+            // continue
+            // else
+            // return false
+        });
+		
+		///////////////EDIT NEEDED///////////////		
+		///no load
+        if (document.getElementById('testchk').value == 1 && document.getElementById('pon').src.match("./images/on.png") && is_connected_1_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_2_3 && !is_connected_4_3) {
+			
+			  
+            alert('Right connection. No load test');
+			document.getElementById('knob1').style['pointer-events'] = "auto";
+			//document.getElementById('knob2').style['pointer-events'] = "none";
+			//document.getElementById('knob3').style['pointer-events'] = "auto";
+			
+			document.getElementById('pb').disabled=false;
+			document.getElementById('tb').disabled=false;
+			document.getElementById('simu').disabled=false;
+			
+           }
+	    else if(document.getElementById('testchk').value == 1 && document.getElementById('pon').src.match("./images/on.png") && is_connected_2_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_1_3 && !is_connected_4_3) {
+			alert('Right connection. No load test');
+			document.getElementById('knob1').style['pointer-events'] = "none";
+			//document.getElementById('knob2').style['pointer-events'] = "none";
+			//document.getElementById('knob3').style['pointer-events'] = "none";
+			
+			document.getElementById('pb').disabled=false;
+			document.getElementById('tb').disabled=false;
+			document.getElementById('simu').disabled=false;
+				
+            } 
+		///Load test
+		else if (document.getElementById('testchk').value == 2 && document.getElementById('pon').src.match("./images/on.png") && is_connected_1_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_2_3 && !is_connected_4_3) {
+			
+			  
+            alert('Right connection. Load test');
+			document.getElementById('knob1').style['pointer-events'] = "auto";
+			//document.getElementById('knob2').style['pointer-events'] = "none";
+			//document.getElementById('knob3').style['pointer-events'] = "auto";
+			
+			document.getElementById('pb').disabled=false;
+			document.getElementById('tb').disabled=false;
+			document.getElementById('simu').disabled=false;
+			
+           }
+	    else if(document.getElementById('testchk').value == 2 && document.getElementById('pon').src.match("./images/on.png") && is_connected_2_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_1_3 && !is_connected_4_3) {
+			alert('Right connection. Load test');
+			document.getElementById('knob1').style['pointer-events'] = "none";
+			//document.getElementById('knob2').style['pointer-events'] = "none";
+			//document.getElementById('knob3').style['pointer-events'] = "none";
+			
+			document.getElementById('pb').disabled=false;
+			document.getElementById('tb').disabled=false;
+			document.getElementById('simu').disabled=false;
+				
+            }  
+			
+			///step
+			else if (document.getElementById('testchk').value == 3 && document.getElementById('pon').src.match("./images/on.png") && is_connected_1_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_2_3 && !is_connected_4_3) {
+			
+			  
+            alert('Right connection. Step response test');
+			document.getElementById('knob1').style['pointer-events'] = "auto";
+			//document.getElementById('knob2').style['pointer-events'] = "auto";
+			//document.getElementById('knob3').style['pointer-events'] = "auto";
+			
+			document.getElementById('pb').disabled=false;
+			document.getElementById('tb').disabled=false;
+			document.getElementById('simu').disabled=false;
+			
+           }
+	    else if(document.getElementById('testchk').value == 3 && document.getElementById('pon').src.match("./images/on.png") && is_connected_2_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_1_3 && !is_connected_4_3) {
+			alert('Right connection. Step response test');
+			document.getElementById('knob1').style['pointer-events'] = "none";
+			//document.getElementById('knob2').style['pointer-events'] = "none";
+			//document.getElementById('knob3').style['pointer-events'] = "none";
+			
+			document.getElementById('pb').disabled=false;
+			document.getElementById('tb').disabled=false;
+			document.getElementById('simu').disabled=false;
+				
+            }  
+			else if(document.getElementById('testchk').value == 3 && document.getElementById('pon').src.match("./images/on.png") && is_connected_4_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_1_3 && !is_connected_2_3) {
+			alert('Right connection. Step response test');
+			document.getElementById('knob1').style['pointer-events'] = "none";
+			//document.getElementById('knob2').style['pointer-events'] = "auto";
+			//document.getElementById('knob3').style['pointer-events'] = "none";
+			
+			document.getElementById('pb').disabled=false;
+			document.getElementById('tb').disabled=false;
+			document.getElementById('simu').disabled=false;
+				
+            }  
+			 
+			else if((document.getElementById('testchk').value == 1 && !is_connected_1_3 && !is_connected_2_3 && !unallowed_connection_present)|| is_connected_4_3 || (document.getElementById('testchk').value == 1 && is_connected_1_3 && is_connected_2_3 && !unallowed_connection_present)){
+				alert('Please go through the instructions properly and make necessary wire connections.');
+			}
+			
+			else if((document.getElementById('testchk').value == 2 && !is_connected_1_3 && !is_connected_2_3 && !unallowed_connection_present)|| is_connected_4_3 || (document.getElementById('testchk').value == 2 && is_connected_1_3 && is_connected_2_3 && !unallowed_connection_present)){
+				alert('Please go through the instructions properly and make necessary wire connections.');
+			}
+			
+			else if((document.getElementById('testchk').value == 3 && !is_connected_1_3 && !is_connected_2_3 && !is_connected_4_3 && !unallowed_connection_present) || (document.getElementById('testchk').value == 3 && is_connected_1_3 && is_connected_2_3 && is_connected_4_3 && !unallowed_connection_present) || (document.getElementById('testchk').value == 3 && is_connected_1_3 && is_connected_2_3 && !unallowed_connection_present) || (document.getElementById('testchk').value == 3 && is_connected_1_3 && is_connected_4_3 && !unallowed_connection_present) || (document.getElementById('testchk').value == 3 && is_connected_2_3 && is_connected_4_3 && !unallowed_connection_present)){
+				alert('Please go through the instructions properly and make necessary wire connections.');
+			}
+			else if(document.getElementById('testchk').value == 0) {
+				alert('First click on "Tests" button and select the test to perform the experiment');
+			}
+			else {
+				alert('Switch on the motor unit. Click ON button.');
+			} 
+
+
+
+    });
+	document.getElementById("simu").addEventListener("click", function () {
         var correct_connections_1_3 = [
             {
                 "source": "bd1",
@@ -390,7 +707,7 @@ jsPlumb.ready(function () {
 		
 		///////////////EDIT NEEDED///////////////		
 		
-        if (is_connected_1_3 && is_connected_5_6 && !unallowed_connection_present ) {
+        if (is_connected_1_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_2_3 && !is_connected_4_3) {
 			
 			  
             document.getElementById('motor_arm_voltage').style.display = "block";
@@ -398,24 +715,31 @@ jsPlumb.ready(function () {
 			document.getElementById('Es').style.display = "none";
 			
            }
-	    if(is_connected_2_3 && is_connected_5_6 && !unallowed_connection_present) {
+	    else if(is_connected_2_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_1_3 && !is_connected_4_3) {
 			
 				document.getElementById('motor_arm_voltage').style.display = "block";
 			   document.getElementById('motor_arm_voltage').value = document.getElementById('Eg').value;
                document.getElementById('Es').style.display = "none"; 
             }  
 			
-			else if(is_connected_4_3 && is_connected_5_6 && !unallowed_connection_present) {
+			else if(document.getElementById('testchk').value == 3 && is_connected_4_3 && is_connected_5_6 && !unallowed_connection_present && !is_connected_2_3 && !is_connected_1_3) {
 				
                document.getElementById('motor_arm_voltage').style.display = "none";
 			   document.getElementById('Es').style.display = "block";
                 
             } 
 			 
+			else if((document.getElementById('testchk').value == 1 && !is_connected_1_3 && !is_connected_2_3 && !unallowed_connection_present)|| is_connected_4_3 || (document.getElementById('testchk').value == 1 && is_connected_1_3 && is_connected_2_3 && !unallowed_connection_present)){
+				alert('Please go through the instructions properly and make necessary wire connections.');
+			}
 			
+			else if((document.getElementById('testchk').value == 2 && !is_connected_1_3 && !is_connected_2_3 && !unallowed_connection_present)|| is_connected_4_3 || (document.getElementById('testchk').value == 2 && is_connected_1_3 && is_connected_2_3 && !unallowed_connection_present)){
+				alert('Please go through the instructions properly and make necessary wire connections.');
+			}
 			
-			
-			
+			else if((document.getElementById('testchk').value == 3 && !is_connected_1_3 && !is_connected_2_3 && !is_connected_4_3 && !unallowed_connection_present) || (document.getElementById('testchk').value == 3 && is_connected_1_3 && is_connected_2_3 && is_connected_4_3 && !unallowed_connection_present) || (document.getElementById('testchk').value == 3 && is_connected_1_3 && is_connected_2_3 && !unallowed_connection_present) || (document.getElementById('testchk').value == 3 && is_connected_1_3 && is_connected_4_3 && !unallowed_connection_present) || (document.getElementById('testchk').value == 3 && is_connected_2_3 && is_connected_4_3 && !unallowed_connection_present)){
+				alert('Please go through the instructions properly and make necessary wire connections.');
+			}
 
 
 
