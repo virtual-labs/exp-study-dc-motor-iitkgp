@@ -278,7 +278,7 @@ Calculate <span class="fontCss2">B</span> in newton-meter/rad/sec. The negative 
 
 The motor inertia <span class="fontCss2">J</span> (newton-meter/rad/sec<sup>2</sup>) is calculated using the formula below (<span class="fontCss">&tau;<sub>m</sub></span> is taken in sec)
 
-$$J = \tau_m (B + \frac{{K_b}^2} {R_a}) \tag{23}$$
+$$J = \tau_m (B + \frac{{K_{b}}^2} {R_a}) \tag{23}$$
 
 where, <span class="fontCss">&tau;<sub>m</sub></span> is the motor time constant and <span class="fontCss2">R<sub>a</sub></span> = 4 &ohm;<br/><br/>
 
